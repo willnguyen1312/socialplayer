@@ -1,0 +1,8 @@
+dist
+node_modules
+coverage
+build
+images
+public
+lib
+lib-types

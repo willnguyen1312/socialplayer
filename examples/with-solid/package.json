@@ -1,0 +1,19 @@
+{
+  "name": "with-solid",
+  "private": true,
+  "scripts": {
+    "dev": "vite"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@unocss/reset": "^0.53.1",
+    "typescript": "^5.1.3",
+    "unocss": "^0.53.1",
+    "vite": "^4.3.9",
+    "vite-plugin-solid": "^2.7.0"
+  },
+  "dependencies": {
+    "@socialplayer/solid": "latest",
+    "solid-js": "^1.7.6"
+  }
+}

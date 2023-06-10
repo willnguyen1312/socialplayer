@@ -1,0 +1,32 @@
+{
+  "name": "docs",
+  "private": true,
+  "description": "A core implementation of socialplayer",
+  "author": "Nam Nguyen <nam.nguyen.node@gmail.com>",
+  "repository": "willnguyen1312/socialplayer",
+  "homepage": "https://github.com/sponsors/willnguyen1312",
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/willnguyen1312"
+  },
+  "keywords": [
+    "javascript",
+    "typescript",
+    "video",
+    "audio",
+    "playback",
+    "mobile",
+    "desktop"
+  ],
+  "scripts": {
+    "dev": "vitepress dev src --open --host",
+    "build": "vitepress build src",
+    "preview": "vitepress preview src"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@socialplayer/core": "workspace:*",
+    "vitepress": "1.0.0-beta.1",
+    "vue": "^3.3.4"
+  }
+}
