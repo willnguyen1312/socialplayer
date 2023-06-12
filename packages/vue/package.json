@@ -1,6 +1,6 @@
 {
   "name": "@socialplayer/vue",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "author": "Nam Nguyen <nam.nguyen.node@gmail.com>",
   "description": "Adapter of socialplayer core for Vue",
   "repository": "willnguyen1312/socialplayer",
