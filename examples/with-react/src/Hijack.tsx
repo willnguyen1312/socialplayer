@@ -1,12 +1,12 @@
 import { Direction, hijackPlaybackPlugin } from "@socialplayer/hijack-plugin"
-import { usePlayback } from "@socialplayer/react"
+import { useSocialPlayer } from "@socialplayer/react"
 import React, { useEffect, useState } from "react"
-usePlayback.use(hijackPlaybackPlugin)
+useSocialPlayer.use(hijackPlaybackPlugin)
 
 const id = "hijack"
 
 function CurrentTime() {
-  const playback = usePlayback({
+  const playback = useSocialPlayer({
     id,
   })
 
@@ -14,7 +14,7 @@ function CurrentTime() {
 }
 
 const Duration = React.memo(() => {
-  const { playbackState } = usePlayback({
+  const { playbackState } = useSocialPlayer({
     id,
   })
 
@@ -22,7 +22,7 @@ const Duration = React.memo(() => {
 })
 
 function App() {
-  const { activate, playbackActions, playbackState } = usePlayback({
+  const { activate, playbackActions, playbackState } = useSocialPlayer({
     id,
   })
   const [direction, setDirection] = useState<Direction>("forward")

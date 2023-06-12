@@ -5,7 +5,7 @@ const source2 = "https://cdn.jwplayer.com/manifests/pZxWPRg4.m3u8"
 const id = "video"
 
 function CurrentTime() {
-  const playback = usePlayback({
+  const playback = useSocialPlayer({
     id: "video",
   })
 
@@ -13,7 +13,7 @@ function CurrentTime() {
 }
 
 const Duration = () => {
-  const { playbackState } = usePlayback({
+  const { playbackState } = useSocialPlayer({
     id: "video",
   })
 
@@ -21,11 +21,11 @@ const Duration = () => {
 }
 
 import { hlsPlaybackPlugin } from "@socialplayer/plugins"
-import { usePlayback } from "@socialplayer/preact"
-usePlayback.use(hlsPlaybackPlugin)
+import { useSocialPlayer } from "@socialplayer/preact"
+useSocialPlayer.use(hlsPlaybackPlugin)
 
 const Resolutions = () => {
-  const { playbackState } = usePlayback({
+  const { playbackState } = useSocialPlayer({
     id,
   })
 
@@ -34,7 +34,7 @@ const Resolutions = () => {
 }
 
 function App() {
-  const { activate, playbackActions, playbackState } = usePlayback({
+  const { activate, playbackActions, playbackState } = useSocialPlayer({
     id,
   })
   const [showDuration, setShowDuration] = useState(true)

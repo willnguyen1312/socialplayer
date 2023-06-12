@@ -1,15 +1,15 @@
 <script lang="ts">
-  import { usePlayback } from "@socialplayer/svelte"
+  import { useSocialPlayer } from "@socialplayer/svelte"
   import { hlsPlaybackPlugin } from "@socialplayer/plugins"
   import type { PlaybackState } from "@socialplayer/core"
   import { onDestroy, onMount, tick } from "svelte"
-  usePlayback.use(hlsPlaybackPlugin)
+  useSocialPlayer.use(hlsPlaybackPlugin)
 
   const {
     activate,
     playbackActions,
     playbackState: _playbackState,
-  } = usePlayback({
+  } = useSocialPlayer({
     id: "video",
   })
 

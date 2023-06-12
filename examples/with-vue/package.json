@@ -6,6 +6,8 @@
     "dev": "vite"
   },
   "dependencies": {
+    "@socialplayer/core": "latest",
+    "@socialplayer/facebook-plugin": "latest",
     "@socialplayer/vue": "latest",
     "vue": "^3.3.4"
   },
