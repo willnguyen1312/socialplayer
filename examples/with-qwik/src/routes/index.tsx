@@ -1,12 +1,12 @@
 import { $, component$, useSignal, useVisibleTask$ } from "@builder.io/qwik"
 import { hlsPlaybackPlugin } from "@socialplayer/plugins"
-import { usePlayback } from "@socialplayer/qwik"
+import { useSocialPlayer } from "@socialplayer/qwik"
 
 const source1 = "https://storage.googleapis.com/shaka-demo-assets/angel-one-hls/hls.m3u8"
 const source2 = "https://cdn.jwplayer.com/manifests/pZxWPRg4.m3u8"
 
 const Duration = component$(() => {
-  const { playbackState } = usePlayback({
+  const { playbackState } = useSocialPlayer({
     id: "video",
   })
 
@@ -14,7 +14,7 @@ const Duration = component$(() => {
 })
 
 const CurrentTime = component$(() => {
-  const { playbackState } = usePlayback({
+  const { playbackState } = useSocialPlayer({
     id: "video",
   })
 
@@ -22,7 +22,7 @@ const CurrentTime = component$(() => {
 })
 
 const Resolutions = component$(() => {
-  const { playbackState } = usePlayback({
+  const { playbackState } = useSocialPlayer({
     id: "video",
   })
 
@@ -31,7 +31,7 @@ const Resolutions = component$(() => {
 })
 
 const App = component$(() => {
-  const { playbackActions, playbackState, use } = usePlayback({
+  const { playbackActions, playbackState, use } = useSocialPlayer({
     id: "video",
   })
   const showDuration = useSignal(true)

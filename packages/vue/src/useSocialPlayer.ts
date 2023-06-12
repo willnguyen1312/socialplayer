@@ -3,7 +3,7 @@ import { onUnmounted, reactive } from "vue"
 
 type CreatePlayer = typeof createPlayer
 
-type UsePlaybackFunc = {
+type useSocialPlayerFunc = {
   (arg: Parameters<CreatePlayer>[0]): {
     playbackState: SocialPlayerState
     playbackActions: SocialPlayerActions
@@ -15,7 +15,7 @@ type UsePlaybackFunc = {
 const playbackStateMaster = new Map<string, SocialPlayerState>()
 const playbackInstanceMap = new Map<string, ReturnType<CreatePlayer>>()
 
-export const usePlayback: UsePlaybackFunc = (arg) => {
+export const useSocialPlayer: useSocialPlayerFunc = (arg) => {
   if (!playbackInstanceMap.has(arg.id)) {
     const playbackInstance = createPlayer(arg)
     playbackInstanceMap.set(arg.id, playbackInstance)
@@ -54,4 +54,4 @@ export const usePlayback: UsePlaybackFunc = (arg) => {
   }
 }
 
-usePlayback.use = createPlayer.use
+useSocialPlayer.use = createPlayer.use

@@ -1,13 +1,13 @@
 import { hlsPlaybackPlugin } from "@socialplayer/plugins"
-import { usePlayback } from "@socialplayer/solid"
+import { useSocialPlayer } from "@socialplayer/solid"
 import { createEffect, createSignal, onMount, type Component } from "solid-js"
-usePlayback.use(hlsPlaybackPlugin)
+useSocialPlayer.use(hlsPlaybackPlugin)
 
 const source1 = "https://storage.googleapis.com/shaka-demo-assets/angel-one-hls/hls.m3u8"
 const source2 = "https://cdn.jwplayer.com/manifests/pZxWPRg4.m3u8"
 
 const Duration: Component = () => {
-  const { playbackState } = usePlayback({
+  const { playbackState } = useSocialPlayer({
     id: "video",
   })
 
@@ -15,7 +15,7 @@ const Duration: Component = () => {
 }
 
 function CurrentTime() {
-  const playback = usePlayback({
+  const playback = useSocialPlayer({
     id: "video",
   })
 
@@ -23,7 +23,7 @@ function CurrentTime() {
 }
 
 const Resolutions: Component = () => {
-  const { playbackState } = usePlayback({
+  const { playbackState } = useSocialPlayer({
     id: "video",
   })
 
@@ -32,7 +32,7 @@ const Resolutions: Component = () => {
 }
 
 const App: Component = () => {
-  const { activate, playbackActions, playbackState } = usePlayback({
+  const { activate, playbackActions, playbackState } = useSocialPlayer({
     id: "video",
   })
   const [showDuration, setShowDuration] = createSignal(true)

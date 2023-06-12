@@ -224,6 +224,12 @@ importers:
 
   examples/with-vue:
     dependencies:
+      '@socialplayer/core':
+        specifier: latest
+        version: link:../../packages/core
+      '@socialplayer/facebook-plugin':
+        specifier: latest
+        version: link:../../packages/facebook
       '@socialplayer/vue':
         specifier: latest
         version: link:../../packages/vue

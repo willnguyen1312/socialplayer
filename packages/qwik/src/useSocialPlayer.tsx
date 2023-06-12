@@ -3,7 +3,7 @@ import { Plugin, PluginFunc, SocialPlayerActions, SocialPlayerState, createPlaye
 
 type CreatePlayer = typeof createPlayer
 
-type UsePlaybackFunc = {
+type useSocialPlayerFunc = {
   (arg: Parameters<CreatePlayer>[0]): {
     playbackState: SocialPlayerState
     playbackActions: SocialPlayerActions
@@ -14,7 +14,7 @@ type UsePlaybackFunc = {
 
 const playbackInstanceMap = new Map<string, ReturnType<CreatePlayer>>()
 
-export const usePlayback: UsePlaybackFunc = (arg) => {
+export const useSocialPlayer: useSocialPlayerFunc = (arg) => {
   const playbackState = useStore<SocialPlayerState>({} as SocialPlayerState)
   const playbackActionsRef: { value: SocialPlayerActions } = { value: {} as SocialPlayerActions }
 

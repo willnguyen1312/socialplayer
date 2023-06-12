@@ -6,7 +6,7 @@ type CreatePlayer = typeof createPlayer
 
 type PlaybackStateSubscriber = ReturnType<typeof writable>["subscribe"]
 
-type UsePlaybackFunc = {
+type useSocialPlayerFunc = {
   (arg: Parameters<CreatePlayer>[0]): {
     playbackState: {
       subscribe: PlaybackStateSubscriber
@@ -20,7 +20,7 @@ type UsePlaybackFunc = {
 const playbackStateMaster = new Map<string, PlaybackStateSubscriber>()
 const playbackInstanceMap = new Map<string, ReturnType<CreatePlayer>>()
 
-export const usePlayback: UsePlaybackFunc = (arg) => {
+export const useSocialPlayer: useSocialPlayerFunc = (arg) => {
   if (!playbackInstanceMap.has(arg.id)) {
     const playbackInstance = createPlayer(arg)
     playbackInstanceMap.set(arg.id, playbackInstance)
@@ -57,4 +57,4 @@ export const usePlayback: UsePlaybackFunc = (arg) => {
   }
 }
 
-usePlayback.use = createPlayer.use
+useSocialPlayer.use = createPlayer.use

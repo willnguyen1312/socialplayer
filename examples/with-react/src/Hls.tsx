@@ -1,14 +1,14 @@
 import { hlsPlaybackPlugin } from "@socialplayer/hls-plugin"
-import { usePlayback } from "@socialplayer/react"
+import { useSocialPlayer } from "@socialplayer/react"
 import React, { useEffect, useState } from "react"
-usePlayback.use(hlsPlaybackPlugin)
+useSocialPlayer.use(hlsPlaybackPlugin)
 
 const source1 = "https://storage.googleapis.com/shaka-demo-assets/angel-one-hls/hls.m3u8"
 const source2 = "https://cdn.jwplayer.com/manifests/pZxWPRg4.m3u8"
 const id = "hls"
 
 function CurrentTime() {
-  const playback = usePlayback({
+  const playback = useSocialPlayer({
     id,
   })
 
@@ -16,7 +16,7 @@ function CurrentTime() {
 }
 
 const Duration = React.memo(() => {
-  const { playbackState } = usePlayback({
+  const { playbackState } = useSocialPlayer({
     id,
   })
 
@@ -24,7 +24,7 @@ const Duration = React.memo(() => {
 })
 
 const Resolutions = React.memo(() => {
-  const { playbackState } = usePlayback({
+  const { playbackState } = useSocialPlayer({
     id,
   })
 
@@ -33,7 +33,7 @@ const Resolutions = React.memo(() => {
 })
 
 function App() {
-  const { activate, playbackActions, playbackState } = usePlayback({
+  const { activate, playbackActions, playbackState } = useSocialPlayer({
     id,
   })
   const [showDuration, setShowDuration] = useState(true)
