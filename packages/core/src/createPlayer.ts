@@ -3,10 +3,14 @@ import { StoreListener, createStore } from "@namnode/store"
 export type CustomSocialPlayerAction<T> = (arg: T & { id: string }) => void
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface CustomSocialPlayerState {}
+interface CustomSocialPlayerState {}
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface CustomSocialPlayerActions {}
+interface CustomSocialPlayerActions {}
+
+export type SocialPlayerState = CustomSocialPlayerState
+
+export type SocialPlayerActions = CustomSocialPlayerActions
 
 export type PlaybackStore = ReturnType<typeof createStore<CustomSocialPlayerState>>
 

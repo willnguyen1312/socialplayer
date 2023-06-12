@@ -1,1 +1,1 @@
-export * from "./usePlayback"
+export * from "./useSocialPlayer"

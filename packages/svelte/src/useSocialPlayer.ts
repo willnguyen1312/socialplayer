@@ -1,31 +1,31 @@
-import { PlaybackActions, PlaybackState, PluginFunc, playback } from "@socialplayer/core"
+import { PluginFunc, SocialPlayerActions, SocialPlayerState, createPlayer } from "@socialplayer/core"
 import { onDestroy } from "svelte"
 import { writable } from "svelte/store"
 
-type Playback = typeof playback
+type CreatePlayer = typeof createPlayer
 
 type PlaybackStateSubscriber = ReturnType<typeof writable>["subscribe"]
 
 type UsePlaybackFunc = {
-  (arg: Parameters<Playback>[0]): {
+  (arg: Parameters<CreatePlayer>[0]): {
     playbackState: {
       subscribe: PlaybackStateSubscriber
     }
-    playbackActions: PlaybackActions
+    playbackActions: SocialPlayerActions
     activate: () => void
   }
   use: PluginFunc
 }
 
 const playbackStateMaster = new Map<string, PlaybackStateSubscriber>()
-const playbackInstanceMap = new Map<string, ReturnType<Playback>>()
+const playbackInstanceMap = new Map<string, ReturnType<CreatePlayer>>()
 
 export const usePlayback: UsePlaybackFunc = (arg) => {
   if (!playbackInstanceMap.has(arg.id)) {
-    const playbackInstance = playback(arg)
+    const playbackInstance = createPlayer(arg)
     playbackInstanceMap.set(arg.id, playbackInstance)
 
-    const { subscribe, set } = writable<PlaybackState>(playbackInstance.getState())
+    const { subscribe, set } = writable<SocialPlayerState>(playbackInstance.getState())
     playbackStateMaster.set(arg.id, subscribe)
 
     playbackInstance.subscribe(({ state }) => {
@@ -38,7 +38,7 @@ export const usePlayback: UsePlaybackFunc = (arg) => {
   })
 
   const activate = () => {
-    const playbackInstance = playbackInstanceMap.get(arg.id) as ReturnType<Playback>
+    const playbackInstance = playbackInstanceMap.get(arg.id) as ReturnType<CreatePlayer>
     const isActivated = playbackInstance.activate()
     if (isActivated) {
       playbackInstance.onCleanup(() => {
@@ -53,8 +53,8 @@ export const usePlayback: UsePlaybackFunc = (arg) => {
       subscribe: playbackStateMaster.get(arg.id) as PlaybackStateSubscriber,
     },
     activate,
-    playbackActions: (playbackInstanceMap.get(arg.id) as ReturnType<Playback>).playbackActions,
+    playbackActions: (playbackInstanceMap.get(arg.id) as ReturnType<CreatePlayer>).playbackActions,
   }
 }
 
-usePlayback.use = playback.use
+usePlayback.use = createPlayer.use
