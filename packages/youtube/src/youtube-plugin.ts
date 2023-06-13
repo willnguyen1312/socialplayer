@@ -15,18 +15,15 @@ declare module "@socialplayer/core" {
   export interface CustomSocialPlayerState {}
 
   export interface CustomSocialPlayerActions {
-    loadFacebookUrl: LoadFunction
+    loadYoutubeUrl: LoadFunction
   }
 }
 
 declare global {
   interface Window {
-    FB: {
-      init(arg: { appId: string; xfbml: boolean; version: string }): void
-      Event: {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        subscribe: any
-      }
+    onYouTubeIframeAPIReady: () => void
+    YT: {
+      Player: any
     }
   }
 }
@@ -41,8 +38,8 @@ const createDefaultState = (): _CustomSocialPlayerState => {
   }
 }
 
-export type FacebookPluginConfig = {
-  appId: string
+export type YoutubePluginConfig = {
+  // appId: string
 }
 
 async function loadScript(url: string) {
@@ -55,44 +52,45 @@ async function loadScript(url: string) {
     }
 
     scriptElement.onerror = function () {
-      reject(new Error("Failed to loadFacebookUrl script: " + url))
+      reject(new Error("Failed to loadYoutubeUrl script: " + url))
     }
 
     document.head.appendChild(scriptElement)
   })
 }
 
-export const facebookPlugin: Plugin<FacebookPluginConfig> = {
+export const youtubePlugin: Plugin<YoutubePluginConfig> = {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
-  install({ store }, config) {
+  install({ store, onCleanup }) {
     store.setState(createDefaultState())
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const loadFacebookUrl: any = async ({ id, source }: { id: string; source: string }) => {
-      const socialPlayerContainer = document.getElementById(id) as HTMLElement
-      socialPlayerContainer.classList.add("fb-video")
-      socialPlayerContainer.dataset.href = source
-      // socialPlayerContainer.dataset.width = "100%"
-      // socialPlayerContainer.dataset.height = "100%"
-
+    const loadYoutubeUrl: any = async ({ id, source }: { id: string; source: string }) => {
       store.setState(createDefaultState())
 
-      await loadScript("https://connect.facebook.net/en_US/sdk.js")
-      window.FB.init({
-        appId: config.appId,
-        xfbml: true,
-        version: "v3.3",
-      })
+      await loadScript("https://www.youtube.com/iframe_api")
 
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
-      window.FB.Event.subscribe("xfbml.ready", (msg: any) => {
-        // const player = msg.instance
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      let player: any
+      window.onYouTubeIframeAPIReady = function () {
+        player = new window.YT.Player(id, {
+          videoId: source,
+          playerVars: {
+            playsinline: 1,
+          },
+        })
+      }
+
+      onCleanup(id, () => {
+        player.destroy()
       })
     }
 
+    onCleanup
+
     return {
-      loadFacebookUrl,
+      loadYoutubeUrl,
     }
   },
 }
