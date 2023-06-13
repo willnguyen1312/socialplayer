@@ -15,14 +15,23 @@ createPlayer.use(vimeoPlugin)
 const id = "video"
 const result = createPlayer({ id })
 
+const getTemplate = (id: string) => {
+  const template = document.getElementById(id) as HTMLTemplateElement
+
+  return {
+    source: template.dataset.source as string,
+    template: template.content.cloneNode(true),
+  }
+}
+
 const container = document.querySelector("#container") as HTMLDivElement
 const buttons = document.querySelectorAll("#list-of-social-player button") as NodeListOf<HTMLButtonElement>
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
-    container.innerHTML = `<div class="h-full w-full" id=${id}></div>`
-    const source = button.dataset.source as string
-    const name = button.dataset.name
+    const name = button.dataset.name as string
+    const { source, template } = getTemplate(name)
+    container.replaceChildren(template)
 
     const handlers = {
       facebook: () => {
@@ -42,3 +51,5 @@ buttons.forEach((button) => {
     handler()
   })
 })
+
+buttons[0].click()
