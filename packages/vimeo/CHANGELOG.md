@@ -1,5 +1,13 @@
 # @socialplayer/vimeo-plugin
 
+## 0.3.0
+
+### Minor Changes
+
+- [#7](https://github.com/willnguyen1312/socialplayer/pull/7)
+  [`7b5da66`](https://github.com/willnguyen1312/socialplayer/commit/7b5da66091e34df5376a8e62ba4f6352e53c370f) Thanks
+  [@willnguyen1312](https://github.com/willnguyen1312)! - Extract loadScript to namnode/utils package 💞
+
 ## 0.2.0
 
 ### Minor Changes
