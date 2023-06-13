@@ -3,12 +3,14 @@ import "virtual:uno.css"
 
 import { createPlayer } from "@socialplayer/core"
 import { facebookPlugin } from "@socialplayer/facebook-plugin"
+import { vimeoPlugin } from "@socialplayer/vimeo-plugin"
 import { youtubePlugin } from "@socialplayer/youtube-plugin"
 
 createPlayer.use(facebookPlugin, {
   appId: "1309697205772819",
 })
 createPlayer.use(youtubePlugin)
+createPlayer.use(vimeoPlugin)
 
 const id = "video"
 const result = createPlayer({ id })
@@ -22,12 +24,21 @@ buttons.forEach((button) => {
     const source = button.dataset.source as string
     const name = button.dataset.name
 
-    if (name === "facebook") {
-      result.playbackActions.loadFacebookUrl({
-        source,
-      })
-    } else if (name === "youtube") {
-      result.playbackActions.loadYoutubeUrl({ source })
+    const handlers = {
+      facebook: () => {
+        result.playbackActions.loadFacebookUrl({
+          source,
+        })
+      },
+      youtube: () => {
+        result.playbackActions.loadYoutubeUrl({ source })
+      },
+      vimeo: () => {
+        result.playbackActions.loadVimeoUrl({ source })
+      },
     }
+
+    const handler = handlers[name as keyof typeof handlers]
+    handler()
   })
 })

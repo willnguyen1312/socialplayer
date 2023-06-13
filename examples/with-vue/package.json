@@ -8,8 +8,9 @@
   "dependencies": {
     "@socialplayer/core": "latest",
     "@socialplayer/facebook-plugin": "latest",
-    "@socialplayer/youtube-plugin": "latest",
+    "@socialplayer/vimeo-plugin": "latest",
     "@socialplayer/vue": "latest",
+    "@socialplayer/youtube-plugin": "latest",
     "vue": "^3.3.4"
   },
   "devDependencies": {
