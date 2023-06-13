@@ -1,3 +1,4 @@
+import { loadScript } from "@namnode/utils"
 import { Plugin } from "@socialplayer/core"
 
 type LoadFunction = (arg: { source: string }) => void
@@ -38,23 +39,6 @@ const createDefaultState = (): _CustomSocialPlayerState => {
 
 export type vimeoPluginConfig = {
   // appId: string
-}
-
-async function loadScript(url: string) {
-  return new Promise<void>(function (resolve, reject) {
-    const scriptElement = document.createElement("script")
-    scriptElement.src = url
-
-    scriptElement.onload = function () {
-      resolve()
-    }
-
-    scriptElement.onerror = function () {
-      reject(new Error("Failed to loadVimeoUrl script: " + url))
-    }
-
-    document.head.appendChild(scriptElement)
-  })
 }
 
 export const vimeoPlugin: Plugin<vimeoPluginConfig> = {

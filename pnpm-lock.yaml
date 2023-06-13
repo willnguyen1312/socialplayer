@@ -331,6 +331,9 @@ importers:
         specifier: workspace:*
         version: link:../core
     devDependencies:
+      '@namnode/utils':
+        specifier: ^0.3.0
+        version: 0.3.0
       eslint:
         specifier: ^8.42.0
         version: 8.42.0
@@ -504,6 +507,9 @@ importers:
         specifier: workspace:*
         version: link:../core
     devDependencies:
+      '@namnode/utils':
+        specifier: ^0.3.0
+        version: 0.3.0
       eslint:
         specifier: ^8.42.0
         version: 8.42.0
@@ -554,6 +560,9 @@ importers:
         specifier: workspace:*
         version: link:../core
     devDependencies:
+      '@namnode/utils':
+        specifier: ^0.3.0
+        version: 0.3.0
       eslint:
         specifier: ^8.42.0
         version: 8.42.0
@@ -1714,6 +1723,10 @@ packages:
 
   /@namnode/utils@0.2.0:
     resolution: {integrity: sha512-9NK6JlxpBsHESp9BcFNssh1CCfI2QNuezzs/PGIhjf2MaBrravIb9KuTdz33rM1e4ZCqXUB0uSjVL6nnCGRQKw==}
+    dev: true
+
+  /@namnode/utils@0.3.0:
+    resolution: {integrity: sha512-XLk9FUwscTyq7pA6xjTG1vadEaem+/aHlZuPUEuirduJ8ob7R2WyQTHShBgu6sAsNKuHg22NBXk2DiT295u4FQ==}
     dev: true
 
   /@nodelib/fs.scandir@2.1.5:
