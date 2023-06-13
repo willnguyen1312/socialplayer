@@ -15,17 +15,14 @@ declare module "@socialplayer/core" {
   export interface CustomSocialPlayerState {}
 
   export interface CustomSocialPlayerActions {
-    loadYoutubeUrl: LoadFunction
+    loadVimeoUrl: LoadFunction
   }
 }
 
 declare global {
   interface Window {
-    onYouTubeIframeAPIReady: () => void
-    YT: {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      Player: any
-    }
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    Vimeo: any
   }
 }
 
@@ -39,7 +36,7 @@ const createDefaultState = (): _CustomSocialPlayerState => {
   }
 }
 
-export type YoutubePluginConfig = {
+export type vimeoPluginConfig = {
   // appId: string
 }
 
@@ -53,51 +50,42 @@ async function loadScript(url: string) {
     }
 
     scriptElement.onerror = function () {
-      reject(new Error("Failed to loadYoutubeUrl script: " + url))
+      reject(new Error("Failed to loadVimeoUrl script: " + url))
     }
 
     document.head.appendChild(scriptElement)
   })
 }
 
-export const youtubePlugin: Plugin<YoutubePluginConfig> = {
+export const vimeoPlugin: Plugin<vimeoPluginConfig> = {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   install({ store, onCleanup }) {
     store.setState(createDefaultState())
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const loadYoutubeUrl: any = async ({ id, source }: { id: string; source: string }) => {
+    const loadVimeoUrl: any = async ({ id, source }: { id: string; source: string }) => {
       store.setState(createDefaultState())
+      const container = document.getElementById(id) as HTMLElement
 
-      await loadScript("https://www.youtube.com/iframe_api")
+      await loadScript("https://player.vimeo.com/api/player.js")
 
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
-      // let player: any
+      const player = new window.Vimeo.Player(container, {
+        url: source,
+        playsinline: true,
+      })
 
-      if (!window.onYouTubeIframeAPIReady) {
-        window.onYouTubeIframeAPIReady = function () {
-          // eslint-disable-next-line @typescript-eslint/no-unused-vars
-          const player = new window.YT.Player(id, {
-            videoId: source,
-            playerVars: {
-              playsinline: 1,
-            },
-          })
-        }
-      } else {
-        window.onYouTubeIframeAPIReady()
-      }
-
-      onCleanup(id, () => {
-        // player.destroy()
+      player.ready().then(() => {
+        const iframe = container.querySelector("iframe") as HTMLIFrameElement
+        iframe.style.width = "100%"
+        iframe.style.height = "100%"
       })
     }
 
     onCleanup
 
     return {
-      loadYoutubeUrl,
+      loadVimeoUrl,
     }
   },
 }

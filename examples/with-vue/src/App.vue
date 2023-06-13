@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { facebookPlugin } from "@socialplayer/facebook-plugin"
+import { vimeoPlugin } from "@socialplayer/vimeo-plugin"
 import { useSocialPlayer } from "@socialplayer/vue"
 import { youtubePlugin } from "@socialplayer/youtube-plugin"
 import { ref } from "vue"
@@ -7,8 +8,8 @@ import { ref } from "vue"
 useSocialPlayer.use(facebookPlugin, {
   appId: "1309697205772819",
 })
-
 useSocialPlayer.use(youtubePlugin)
+useSocialPlayer.use(vimeoPlugin)
 
 const id = "video"
 type ButtonItem = {
@@ -24,21 +25,34 @@ const buttons: ButtonItem[] = [
     name: "youtube",
     source: "WZKW2Hq2fks",
   },
+  {
+    name: "vimeo",
+    source: "https://vimeo.com/365531165",
+  },
 ]
 const { playbackActions } = useSocialPlayer({ id })
 const container = ref<HTMLElement>()
 
-function handleButtonClick(item: ButtonItem) {
+function handleButtonClick({ name, source }: ButtonItem) {
   const containerElement = container.value as HTMLElement
   containerElement.innerHTML = `<div class="h-full w-full" id=${id}></div>`
 
-  if (item.name === "facebook") {
-    playbackActions.loadFacebookUrl({
-      source: item.source,
-    })
-  } else if (item.name === "youtube") {
-    playbackActions.loadYoutubeUrl({ source: item.source })
+  const handlers = {
+    facebook: () => {
+      playbackActions.loadFacebookUrl({
+        source,
+      })
+    },
+    youtube: () => {
+      playbackActions.loadYoutubeUrl({ source })
+    },
+    vimeo: () => {
+      playbackActions.loadVimeoUrl({ source })
+    },
   }
+
+  const handler = handlers[name as keyof typeof handlers]
+  handler()
 }
 </script>
 
