@@ -6,28 +6,35 @@
     <title>Vite + TS</title>
   </head>
   <body class="space-y-4 p-4">
-    <div class="h-[400px] w-[600px]" id="container">
+    <div class="h-[400px] w-[600px]" id="container"></div>
+
+    <template id="facebook" data-source="https://www.facebook.com/facebook/videos/3138286969730016">
       <div class="h-full w-full" id="video"></div>
-    </div>
+    </template>
+
+    <template id="youtube" data-source="WZKW2Hq2fks">
+      <div class="h-full w-full" id="video"></div>
+    </template>
+
+    <template id="vimeo" data-source="https://vimeo.com/365531165">
+      <div class="h-full w-full" id="video"></div>
+    </template>
 
     <span class="isolate inline-flex rounded-md shadow-sm" id="list-of-social-player">
       <button
         class="relative -ml-px inline-flex items-center bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10"
-        data-source="https://www.facebook.com/facebook/videos/3138286969730016"
         data-name="facebook"
       >
         Facebook
       </button>
       <button
         class="relative -ml-px inline-flex items-center bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10"
-        data-source="WZKW2Hq2fks"
         data-name="youtube"
       >
         Youtube
       </button>
       <button
         class="relative -ml-px inline-flex items-center bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10"
-        data-source="https://vimeo.com/365531165"
         data-name="vimeo"
       >
         Vimeo
