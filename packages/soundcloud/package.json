@@ -1,6 +1,6 @@
 {
   "name": "@socialplayer/soundcloud-plugin",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A Soundcloud implementation of socialplayer",
   "author": "Nam Nguyen <nam.nguyen.node@gmail.com>",
   "repository": "willnguyen1312/socialplayer",
