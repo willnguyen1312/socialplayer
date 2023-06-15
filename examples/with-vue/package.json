@@ -7,13 +7,14 @@
   },
   "dependencies": {
     "@socialplayer/core": "latest",
+    "@socialplayer/vue": "latest",
+    "vue": "^3.3.4",
     "@socialplayer/facebook-plugin": "latest",
     "@socialplayer/soundcloud-plugin": "latest",
     "@socialplayer/streamable-plugin": "latest",
     "@socialplayer/vimeo-plugin": "latest",
-    "@socialplayer/vue": "latest",
     "@socialplayer/youtube-plugin": "latest",
-    "vue": "^3.3.4"
+    "@socialplayer/twitch-plugin": "latest"
   },
   "devDependencies": {
     "@unocss/reset": "^0.53.1",

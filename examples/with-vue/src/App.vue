@@ -2,6 +2,7 @@
 import { facebookPlugin } from "@socialplayer/facebook-plugin"
 import { soundcloudPlugin } from "@socialplayer/soundcloud-plugin"
 import { streamablePlugin } from "@socialplayer/streamable-plugin"
+import { twitchPlugin } from "@socialplayer/twitch-plugin"
 import { vimeoPlugin } from "@socialplayer/vimeo-plugin"
 import { useSocialPlayer } from "@socialplayer/vue"
 import { youtubePlugin } from "@socialplayer/youtube-plugin"
@@ -14,8 +15,9 @@ useSocialPlayer.use(youtubePlugin)
 useSocialPlayer.use(vimeoPlugin)
 useSocialPlayer.use(soundcloudPlugin)
 useSocialPlayer.use(streamablePlugin)
+useSocialPlayer.use(twitchPlugin)
 
-type SocialPlayerName = "facebook" | "youtube" | "vimeo" | "soundcloud" | "streamable"
+type SocialPlayerName = "facebook" | "youtube" | "vimeo" | "soundcloud" | "streamable" | "twitch"
 
 type SourceItem = {
   name: SocialPlayerName
@@ -43,6 +45,10 @@ const sources: SourceItem[] = [
     name: "streamable",
     source: "4h1i2",
   },
+  {
+    name: "twitch",
+    source: "https://m.twitch.tv/videos/1619751464",
+  },
 ]
 
 const buttonNames = sources.map((item) => item.name)
@@ -52,6 +58,7 @@ const { playbackActions: youtubePlaybackActions } = useSocialPlayer({ id: "youtu
 const { playbackActions: vimeoPlaybackActions } = useSocialPlayer({ id: "vimeo" })
 const { playbackActions: soundcloudPlaybackActions } = useSocialPlayer({ id: "soundcloud" })
 const { playbackActions: streamablePlaybackActions } = useSocialPlayer({ id: "streamable" })
+const { playbackActions: twitchPlaybackActions } = useSocialPlayer({ id: "twitch" })
 
 const currentSocialPlayerName = ref<SocialPlayerName>(sources[0].name)
 
@@ -80,6 +87,9 @@ watchEffect(
       },
       streamable: () => {
         streamablePlaybackActions.loadStreamableUrl({ source })
+      },
+      twitch: () => {
+        twitchPlaybackActions.loadTwitchUrl({ source })
       },
     }
 
@@ -110,6 +120,10 @@ watchEffect(
 
       <div class="h-full w-full" v-show="currentSocialPlayerName === 'streamable'">
         <div class="h-full w-full" id="streamable"></div>
+      </div>
+
+      <div class="h-full w-full" v-show="currentSocialPlayerName === 'twitch'">
+        <div class="h-full w-full" id="twitch"></div>
       </div>
     </div>
 
