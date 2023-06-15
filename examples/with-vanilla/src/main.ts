@@ -5,6 +5,7 @@ import { createPlayer } from "@socialplayer/core"
 import { facebookPlugin } from "@socialplayer/facebook-plugin"
 import { soundcloudPlugin } from "@socialplayer/soundcloud-plugin"
 import { streamablePlugin } from "@socialplayer/streamable-plugin"
+import { twitchPlugin } from "@socialplayer/twitch-plugin"
 import { vimeoPlugin } from "@socialplayer/vimeo-plugin"
 import { youtubePlugin } from "@socialplayer/youtube-plugin"
 
@@ -15,6 +16,7 @@ createPlayer.use(youtubePlugin)
 createPlayer.use(soundcloudPlugin)
 createPlayer.use(vimeoPlugin)
 createPlayer.use(streamablePlugin)
+createPlayer.use(twitchPlugin)
 
 const id = "video"
 const result = createPlayer({ id })
@@ -31,7 +33,7 @@ const getTemplate = (id: string) => {
 const container = document.querySelector("#container") as HTMLDivElement
 const buttons = document.querySelectorAll("#list-of-social-player button") as NodeListOf<HTMLButtonElement>
 
-type SocialPlayerName = "facebook" | "youtube" | "vimeo" | "soundcloud" | "streamable"
+type SocialPlayerName = "facebook" | "youtube" | "vimeo" | "soundcloud" | "streamable" | "twitch"
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -56,6 +58,9 @@ buttons.forEach((button) => {
       },
       streamable: () => {
         result.playbackActions.loadStreamableUrl({ source })
+      },
+      twitch: () => {
+        result.playbackActions.loadTwitchUrl({ source })
       },
     }
 
