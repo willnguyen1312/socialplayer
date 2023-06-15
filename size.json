@@ -1,1 +1,33 @@
-{}
+{
+  "@socialplayer/core": {
+    "createPlayer": "560 B"
+  },
+  "@socialplayer/react": {
+    "useSocialPlayer": "742 B"
+  },
+  "@socialplayer/qwik": {
+    "useSocialPlayer": "986 B",
+    "_auto_playbackInstanceMap": "77 B"
+  },
+  "@socialplayer/solid": {
+    "useSocialPlayer": "2.07 KB"
+  },
+  "@socialplayer/svelte": {
+    "useSocialPlayer": "953 B"
+  },
+  "@socialplayer/vue": {
+    "useSocialPlayer": "722 B"
+  },
+  "@socialplayer/facebook-plugin": {
+    "facebookPlugin": "368 B"
+  },
+  "@socialplayer/youtube-plugin": {
+    "youtubePlugin": "349 B"
+  },
+  "@socialplayer/vimeo-plugin": {
+    "vimeoPlugin": "360 B"
+  },
+  "@socialplayer/soundcloud-plugin": {
+    "soundcloudPlugin": "322 B"
+  }
+}
