@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { facebookPlugin } from "@socialplayer/facebook-plugin"
 import { soundcloudPlugin } from "@socialplayer/soundcloud-plugin"
+import { streamablePlugin } from "@socialplayer/streamable-plugin"
 import { vimeoPlugin } from "@socialplayer/vimeo-plugin"
 import { useSocialPlayer } from "@socialplayer/vue"
 import { youtubePlugin } from "@socialplayer/youtube-plugin"
@@ -12,8 +13,9 @@ useSocialPlayer.use(facebookPlugin, {
 useSocialPlayer.use(youtubePlugin)
 useSocialPlayer.use(vimeoPlugin)
 useSocialPlayer.use(soundcloudPlugin)
+useSocialPlayer.use(streamablePlugin)
 
-type SocialPlayerName = "facebook" | "youtube" | "vimeo" | "soundcloud"
+type SocialPlayerName = "facebook" | "youtube" | "vimeo" | "soundcloud" | "streamable"
 
 type SourceItem = {
   name: SocialPlayerName
@@ -37,6 +39,10 @@ const sources: SourceItem[] = [
     name: "soundcloud",
     source: "https://soundcloud.com/kainalu-woodhall/see-you-again-tyler-the-creator",
   },
+  {
+    name: "streamable",
+    source: "4h1i2",
+  },
 ]
 
 const buttonNames = sources.map((item) => item.name)
@@ -45,6 +51,7 @@ const { playbackActions: facebookPlaybackActions } = useSocialPlayer({ id: "face
 const { playbackActions: youtubePlaybackActions } = useSocialPlayer({ id: "youtube" })
 const { playbackActions: vimeoPlaybackActions } = useSocialPlayer({ id: "vimeo" })
 const { playbackActions: soundcloudPlaybackActions } = useSocialPlayer({ id: "soundcloud" })
+const { playbackActions: streamablePlaybackActions } = useSocialPlayer({ id: "streamable" })
 
 const currentSocialPlayerName = ref<SocialPlayerName>(sources[0].name)
 
@@ -71,6 +78,9 @@ watchEffect(
       soundcloud: () => {
         soundcloudPlaybackActions.loadSoundcloudUrl({ source })
       },
+      streamable: () => {
+        streamablePlaybackActions.loadStreamableUrl({ source })
+      },
     }
 
     const handler = handlers[currentSocialPlayerName.value as keyof typeof handlers]
@@ -96,6 +106,10 @@ watchEffect(
 
       <div class="h-full w-full" v-show="currentSocialPlayerName === 'soundcloud'">
         <div class="h-full w-full" id="soundcloud"></div>
+      </div>
+
+      <div class="h-full w-full" v-show="currentSocialPlayerName === 'streamable'">
+        <div class="h-full w-full" id="streamable"></div>
       </div>
     </div>
 

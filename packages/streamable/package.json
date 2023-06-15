@@ -1,7 +1,7 @@
 {
-  "name": "@socialplayer/core",
-  "version": "0.1.0",
-  "description": "A core implementation of socialplayer",
+  "name": "@socialplayer/streamable-plugin",
+  "version": "0.0.0",
+  "description": "A Streamable implementation of socialplayer",
   "author": "Nam Nguyen <nam.nguyen.node@gmail.com>",
   "repository": "willnguyen1312/socialplayer",
   "homepage": "https://github.com/sponsors/willnguyen1312",
@@ -19,10 +19,7 @@
     "desktop",
     "social",
     "player",
-    "youtube",
-    "facebook",
-    "vimeo",
-    "twitch"
+    "streamable"
   ],
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -40,13 +37,15 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "devDependencies": {
-    "@namnode/store": "^0.1.0",
     "@namnode/utils": "^0.3.0",
     "eslint": "^8.42.0",
     "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",
     "tsup": "^6.7.0",
     "typescript": "^5.1.3"
+  },
+  "dependencies": {
+    "@socialplayer/core": "workspace:*"
   },
   "publishConfig": {
     "access": "public"

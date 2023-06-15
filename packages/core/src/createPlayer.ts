@@ -81,14 +81,11 @@ export const createPlayer: CreatePlayerFunc = ({ id }) => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const processActions = (actions: any) => {
     for (const key in actions) {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
       const originalAction = actions[key]
       const wrappedAction = <T extends object>(arg: T) => {
         originalAction({ ...arg, id })
       }
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
+
       actions[key] = wrappedAction
     }
   }

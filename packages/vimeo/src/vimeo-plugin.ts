@@ -42,8 +42,6 @@ export type vimeoPluginConfig = {
 }
 
 export const vimeoPlugin: Plugin<vimeoPluginConfig> = {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
   install({ store, onCleanup }) {
     store.setState(createDefaultState())
 

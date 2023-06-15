@@ -15,6 +15,7 @@
     "@socialplayer/core": "latest",
     "@socialplayer/facebook-plugin": "latest",
     "@socialplayer/soundcloud-plugin": "latest",
+    "@socialplayer/streamable-plugin": "latest",
     "@socialplayer/vimeo-plugin": "latest",
     "@socialplayer/youtube-plugin": "latest"
   }

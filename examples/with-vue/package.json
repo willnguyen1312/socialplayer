@@ -7,10 +7,11 @@
   },
   "dependencies": {
     "@socialplayer/core": "latest",
-    "@socialplayer/vue": "latest",
     "@socialplayer/facebook-plugin": "latest",
     "@socialplayer/soundcloud-plugin": "latest",
+    "@socialplayer/streamable-plugin": "latest",
     "@socialplayer/vimeo-plugin": "latest",
+    "@socialplayer/vue": "latest",
     "@socialplayer/youtube-plugin": "latest",
     "vue": "^3.3.4"
   },
