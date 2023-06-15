@@ -3,6 +3,7 @@ import "virtual:uno.css"
 
 import { createPlayer } from "@socialplayer/core"
 import { facebookPlugin } from "@socialplayer/facebook-plugin"
+import { soundcloudPlugin } from "@socialplayer/soundcloud-plugin"
 import { vimeoPlugin } from "@socialplayer/vimeo-plugin"
 import { youtubePlugin } from "@socialplayer/youtube-plugin"
 
@@ -10,6 +11,7 @@ createPlayer.use(facebookPlugin, {
   appId: "1309697205772819",
 })
 createPlayer.use(youtubePlugin)
+createPlayer.use(soundcloudPlugin)
 createPlayer.use(vimeoPlugin)
 
 const id = "video"
@@ -27,13 +29,15 @@ const getTemplate = (id: string) => {
 const container = document.querySelector("#container") as HTMLDivElement
 const buttons = document.querySelectorAll("#list-of-social-player button") as NodeListOf<HTMLButtonElement>
 
+type SocialPlayerName = "facebook" | "youtube" | "vimeo" | "soundcloud"
+
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     const name = button.dataset.name as string
     const { source, template } = getTemplate(name)
     container.replaceChildren(template)
 
-    const handlers = {
+    const handlers: Record<SocialPlayerName, () => void> = {
       facebook: () => {
         result.playbackActions.loadFacebookUrl({
           source,
@@ -44,6 +48,9 @@ buttons.forEach((button) => {
       },
       vimeo: () => {
         result.playbackActions.loadVimeoUrl({ source })
+      },
+      soundcloud: () => {
+        result.playbackActions.loadSoundcloudUrl({ source })
       },
     }
 
