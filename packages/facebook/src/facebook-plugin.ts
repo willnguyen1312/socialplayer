@@ -47,8 +47,6 @@ export type FacebookPluginConfig = {
 }
 
 export const facebookPlugin: Plugin<FacebookPluginConfig> = {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
   install({ store }, config) {
     store.setState(createDefaultState())
 

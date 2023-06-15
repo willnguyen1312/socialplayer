@@ -13,15 +13,15 @@ declare module "@socialplayer/core" {
   export interface CustomSocialPlayerState {}
 
   export interface CustomSocialPlayerActions {
-    loadSoundcloudUrl: LoadFunction
+    loadStreamableUrl: LoadFunction
   }
 }
 
 declare global {
   interface Window {
-    SC: {
+    playerjs: {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      Widget: any
+      Player: any
     }
   }
 }
@@ -30,37 +30,37 @@ const createDefaultState = (): _CustomSocialPlayerState => {
   return {}
 }
 
-export type SoundcloudPluginConfig = {
+export type StreamablePluginConfig = {
   // Nothing yet
 }
 
-export const soundcloudPlugin: Plugin<SoundcloudPluginConfig> = {
+export const streamablePlugin: Plugin<StreamablePluginConfig> = {
   install({ store }) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const loadSoundcloudUrl: any = async ({ id, source }: { id: string; source: string }) => {
+    const loadStreamableUrl: any = async ({ id, source }: { id: string; source: string }) => {
       store.setState(createDefaultState())
       const videoContainer = document.getElementById(id) as HTMLDivElement
 
-      await loadScript("https://w.soundcloud.com/player/api.js")
+      await loadScript("https://cdn.embed.ly/player-0.1.0.min.js")
 
       const iframe = document.createElement("iframe")
       iframe.style.width = "100%"
       iframe.style.height = "100%"
-      iframe.src = `https://w.soundcloud.com/player/?url=${encodeURIComponent(source)}`
+      iframe.src = `https://streamable.com/o/${source}`
       videoContainer.replaceChildren(iframe)
 
-      // const player = window.SC.Widget(iframe)
-      // player.load(source, {
-      //   callback: () => {
-      //     player.getDuration((duration: number) => {
-      //       console.log("duration", duration)
-      //     })
-      //   },
+      // const player = new window.playerjs.Player(iframe)
+
+      // player.on("ready", () => {
+      //   player.on("play", () => {
+      //     player.getDuration((duration: number) => console.log(duration))
+      //     console.log("play")
+      //   })
       // })
     }
 
     return {
-      loadSoundcloudUrl,
+      loadStreamableUrl,
     }
   },
 }

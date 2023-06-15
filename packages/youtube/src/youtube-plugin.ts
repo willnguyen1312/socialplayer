@@ -45,8 +45,6 @@ export type YoutubePluginConfig = {
 }
 
 export const youtubePlugin: Plugin<YoutubePluginConfig> = {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
   install({ store, onCleanup }) {
     store.setState(createDefaultState())
 
