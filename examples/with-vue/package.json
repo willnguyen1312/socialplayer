@@ -14,6 +14,7 @@
     "@socialplayer/vimeo-plugin": "latest",
     "@socialplayer/vue": "latest",
     "@socialplayer/wistia-plugin": "latest",
+    "@socialplayer/vidyard-plugin": "latest",
     "@socialplayer/youtube-plugin": "latest",
     "vue": "^3.3.4"
   },

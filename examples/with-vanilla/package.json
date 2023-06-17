@@ -17,6 +17,7 @@
     "@socialplayer/soundcloud-plugin": "latest",
     "@socialplayer/streamable-plugin": "latest",
     "@socialplayer/twitch-plugin": "latest",
+    "@socialplayer/vidyard-plugin": "latest",
     "@socialplayer/vimeo-plugin": "latest",
     "@socialplayer/wistia-plugin": "latest",
     "@socialplayer/youtube-plugin": "latest"

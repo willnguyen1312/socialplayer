@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { loadScript } from "@namnode/utils"
 import { Plugin } from "@socialplayer/core"
 
@@ -16,14 +17,14 @@ declare module "@socialplayer/core" {
   export interface CustomSocialPlayerState {}
 
   export interface CustomSocialPlayerActions {
-    loadVimeoUrl: LoadFunction
+    loadVidyardUrl: LoadFunction
   }
 }
 
 declare global {
   interface Window {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    Vimeo: any
+    onVidyardAPI: any
+    Vidyard: any
   }
 }
 
@@ -37,35 +38,44 @@ const createDefaultState = (): _CustomSocialPlayerState => {
   }
 }
 
-export type vimeoPluginConfig = {
+export type VidyardPluginConfig = {
   // appId: string
 }
 
-export const vimeoPlugin: Plugin<vimeoPluginConfig> = {
+export const vidyardPlugin: Plugin<VidyardPluginConfig> = {
   install({ store, onCleanup }) {
     store.setState(createDefaultState())
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const loadVimeoUrl: any = async ({ id, source }: { id: string; source: string }) => {
+    const loadVidyardUrl: any = async ({ id, source }: { id: string; source: string }) => {
       store.setState(createDefaultState())
+
+      const videoId = source.split("/")[source.split("/").length - 1]
+
       const container = document.getElementById(id) as HTMLElement
 
-      await loadScript("https://player.vimeo.com/api/player.js")
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      let player: any
 
-      const player = new window.Vimeo.Player(container, {
-        url: source,
-        playsinline: true,
-      })
+      window.onVidyardAPI = (Vidyard: any) => {
+        Vidyard.api.addReadyListener((_: any, _player: any) => {
+          player = _player
+        }, videoId)
 
-      player.ready().then(() => {
-        const iframe = container.querySelector("iframe") as HTMLIFrameElement
-        iframe.style.width = "100%"
-        iframe.style.height = "100%"
+        Vidyard.api.renderPlayer({
+          uuid: videoId,
+          container,
+        })
+      }
+
+      await loadScript("https://play.vidyard.com/embed/v4.js")
+
+      onCleanup(id, () => {
+        // Nothing yet
       })
     }
 
     return {
-      loadVimeoUrl,
+      loadVidyardUrl,
     }
   },
 }
