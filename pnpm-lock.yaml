@@ -263,6 +263,9 @@ importers:
       '@socialplayer/vue':
         specifier: latest
         version: link:../../packages/vue
+      '@socialplayer/wistia-plugin':
+        specifier: latest
+        version: link:../../packages/wistia
       '@socialplayer/youtube-plugin':
         specifier: latest
         version: link:../../packages/youtube

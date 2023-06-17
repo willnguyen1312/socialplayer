@@ -5,6 +5,7 @@ import { streamablePlugin } from "@socialplayer/streamable-plugin"
 import { twitchPlugin } from "@socialplayer/twitch-plugin"
 import { vimeoPlugin } from "@socialplayer/vimeo-plugin"
 import { useSocialPlayer } from "@socialplayer/vue"
+import { wistiaPlugin } from "@socialplayer/wistia-plugin"
 import { youtubePlugin } from "@socialplayer/youtube-plugin"
 import { ref, watchEffect } from "vue"
 
@@ -16,8 +17,9 @@ useSocialPlayer.use(vimeoPlugin)
 useSocialPlayer.use(soundcloudPlugin)
 useSocialPlayer.use(streamablePlugin)
 useSocialPlayer.use(twitchPlugin)
+useSocialPlayer.use(wistiaPlugin)
 
-type SocialPlayerName = "facebook" | "youtube" | "vimeo" | "soundcloud" | "streamable" | "twitch"
+type SocialPlayerName = "facebook" | "youtube" | "vimeo" | "soundcloud" | "streamable" | "twitch" | "wistia"
 
 type SourceItem = {
   name: SocialPlayerName
@@ -49,6 +51,10 @@ const sources: SourceItem[] = [
     name: "twitch",
     source: "https://m.twitch.tv/videos/1619751464",
   },
+  {
+    name: "wistia",
+    source: "https://home.wistia.com/medias/zs8hlyi5xz",
+  },
 ]
 
 const buttonNames = sources.map((item) => item.name)
@@ -59,6 +65,7 @@ const { playbackActions: vimeoPlaybackActions } = useSocialPlayer({ id: "vimeo" 
 const { playbackActions: soundcloudPlaybackActions } = useSocialPlayer({ id: "soundcloud" })
 const { playbackActions: streamablePlaybackActions } = useSocialPlayer({ id: "streamable" })
 const { playbackActions: twitchPlaybackActions } = useSocialPlayer({ id: "twitch" })
+const { playbackActions: wistiaPlaybackActions } = useSocialPlayer({ id: "wistia" })
 
 const currentSocialPlayerName = ref<SocialPlayerName>(sources[0].name)
 
@@ -90,6 +97,9 @@ watchEffect(
       },
       twitch: () => {
         twitchPlaybackActions.loadTwitchUrl({ source })
+      },
+      wistia: () => {
+        wistiaPlaybackActions.loadWistiaUrl({ source })
       },
     }
 
@@ -124,6 +134,10 @@ watchEffect(
 
       <div class="h-full w-full" v-show="currentSocialPlayerName === 'twitch'">
         <div class="h-full w-full" id="twitch"></div>
+      </div>
+
+      <div class="h-full w-full" v-show="currentSocialPlayerName === 'wistia'">
+        <div class="h-full w-full" id="wistia"></div>
       </div>
     </div>
 
