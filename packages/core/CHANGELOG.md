@@ -1,5 +1,13 @@
 # @socialplayer/core
 
+## 0.1.1
+
+### Patch Changes
+
+- [#21](https://github.com/willnguyen1312/socialplayer/pull/21)
+  [`bf5c45e`](https://github.com/willnguyen1312/socialplayer/commit/bf5c45e9c59fd4196a86ad08601dc1f14febcc7c) Thanks
+  [@willnguyen1312](https://github.com/willnguyen1312)! - Patch core 💞
+
 ## 0.1.0
 
 ### Minor Changes

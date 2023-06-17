@@ -1,6 +1,6 @@
 {
   "name": "@socialplayer/wistia-plugin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Wistia implementation of socialplayer",
   "author": "Nam Nguyen <nam.nguyen.node@gmail.com>",
   "repository": "willnguyen1312/socialplayer",

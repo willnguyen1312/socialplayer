@@ -1,6 +1,6 @@
 {
   "name": "@socialplayer/vimeo-plugin",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A Vimeo implementation of socialplayer",
   "author": "Nam Nguyen <nam.nguyen.node@gmail.com>",
   "repository": "willnguyen1312/socialplayer",
