@@ -80,8 +80,6 @@ export const youtubePlugin: Plugin<YoutubePluginConfig> = {
       })
     }
 
-    onCleanup
-
     return {
       loadYoutubeUrl,
     }

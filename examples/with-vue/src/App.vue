@@ -3,6 +3,7 @@ import { facebookPlugin } from "@socialplayer/facebook-plugin"
 import { soundcloudPlugin } from "@socialplayer/soundcloud-plugin"
 import { streamablePlugin } from "@socialplayer/streamable-plugin"
 import { twitchPlugin } from "@socialplayer/twitch-plugin"
+import { vidyardPlugin } from "@socialplayer/vidyard-plugin"
 import { vimeoPlugin } from "@socialplayer/vimeo-plugin"
 import { useSocialPlayer } from "@socialplayer/vue"
 import { wistiaPlugin } from "@socialplayer/wistia-plugin"
@@ -17,9 +18,10 @@ useSocialPlayer.use(vimeoPlugin)
 useSocialPlayer.use(soundcloudPlugin)
 useSocialPlayer.use(streamablePlugin)
 useSocialPlayer.use(twitchPlugin)
+useSocialPlayer.use(vidyardPlugin)
 useSocialPlayer.use(wistiaPlugin)
 
-type SocialPlayerName = "facebook" | "youtube" | "vimeo" | "soundcloud" | "streamable" | "twitch" | "wistia"
+type SocialPlayerName = "facebook" | "youtube" | "vimeo" | "soundcloud" | "streamable" | "twitch" | "wistia" | "vidyard"
 
 type SourceItem = {
   name: SocialPlayerName
@@ -55,6 +57,10 @@ const sources: SourceItem[] = [
     name: "wistia",
     source: "https://home.wistia.com/medias/zs8hlyi5xz",
   },
+  {
+    name: "vidyard",
+    source: "https://video.vidyard.com/watch/4Z3JEiuHGCbGWAhith9GpS",
+  },
 ]
 
 const buttonNames = sources.map((item) => item.name)
@@ -66,6 +72,7 @@ const { playbackActions: soundcloudPlaybackActions } = useSocialPlayer({ id: "so
 const { playbackActions: streamablePlaybackActions } = useSocialPlayer({ id: "streamable" })
 const { playbackActions: twitchPlaybackActions } = useSocialPlayer({ id: "twitch" })
 const { playbackActions: wistiaPlaybackActions } = useSocialPlayer({ id: "wistia" })
+const { playbackActions: vidyardPlaybackActions } = useSocialPlayer({ id: "vidyard" })
 
 const currentSocialPlayerName = ref<SocialPlayerName>(sources[0].name)
 
@@ -100,6 +107,9 @@ watchEffect(
       },
       wistia: () => {
         wistiaPlaybackActions.loadWistiaUrl({ source })
+      },
+      vidyard: () => {
+        vidyardPlaybackActions.loadVidyardUrl({ source })
       },
     }
 
@@ -138,6 +148,10 @@ watchEffect(
 
       <div class="h-full w-full" v-show="currentSocialPlayerName === 'wistia'">
         <div class="h-full w-full" id="wistia"></div>
+      </div>
+
+      <div class="h-full w-full" v-show="currentSocialPlayerName === 'vidyard'">
+        <div class="flex h-full w-full items-center justify-center" id="vidyard"></div>
       </div>
     </div>
 
