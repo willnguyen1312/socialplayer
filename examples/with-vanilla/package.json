@@ -16,9 +16,9 @@
     "@socialplayer/facebook-plugin": "latest",
     "@socialplayer/soundcloud-plugin": "latest",
     "@socialplayer/streamable-plugin": "latest",
-    "@socialplayer/vimeo-plugin": "latest",
-    "@socialplayer/youtube-plugin": "latest",
     "@socialplayer/twitch-plugin": "latest",
-    "@socialplayer/wistia-plugin": "latest"
+    "@socialplayer/vimeo-plugin": "latest",
+    "@socialplayer/wistia-plugin": "latest",
+    "@socialplayer/youtube-plugin": "latest"
   }
 }
