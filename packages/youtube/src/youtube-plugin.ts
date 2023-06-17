@@ -59,9 +59,13 @@ export const youtubePlugin: Plugin<YoutubePluginConfig> = {
 
       if (!window.onYouTubeIframeAPIReady) {
         window.onYouTubeIframeAPIReady = function () {
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          const videoId = source.match(/(youtu\.be\/|\/v\/|v=|embed\/|watch\?v=|&v=)([^#&?]*)/)![2]
+
           // eslint-disable-next-line @typescript-eslint/no-unused-vars
-          const player = new window.YT.Player(id, {
-            videoId: source,
+          // const player = new window.YT.Player(id, {
+          new window.YT.Player(id, {
+            videoId,
             playerVars: {
               playsinline: 1,
             },

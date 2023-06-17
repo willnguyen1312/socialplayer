@@ -7,6 +7,7 @@ import { soundcloudPlugin } from "@socialplayer/soundcloud-plugin"
 import { streamablePlugin } from "@socialplayer/streamable-plugin"
 import { twitchPlugin } from "@socialplayer/twitch-plugin"
 import { vimeoPlugin } from "@socialplayer/vimeo-plugin"
+import { wistiaPlugin } from "@socialplayer/wistia-plugin"
 import { youtubePlugin } from "@socialplayer/youtube-plugin"
 
 createPlayer.use(facebookPlugin, {
@@ -16,6 +17,7 @@ createPlayer.use(youtubePlugin)
 createPlayer.use(soundcloudPlugin)
 createPlayer.use(vimeoPlugin)
 createPlayer.use(streamablePlugin)
+createPlayer.use(wistiaPlugin)
 createPlayer.use(twitchPlugin)
 
 const id = "video"
@@ -33,7 +35,7 @@ const getTemplate = (id: string) => {
 const container = document.querySelector("#container") as HTMLDivElement
 const buttons = document.querySelectorAll("#list-of-social-player button") as NodeListOf<HTMLButtonElement>
 
-type SocialPlayerName = "facebook" | "youtube" | "vimeo" | "soundcloud" | "streamable" | "twitch"
+type SocialPlayerName = "facebook" | "youtube" | "vimeo" | "soundcloud" | "streamable" | "twitch" | "wistia"
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -61,6 +63,9 @@ buttons.forEach((button) => {
       },
       twitch: () => {
         result.playbackActions.loadTwitchUrl({ source })
+      },
+      wistia: () => {
+        result.playbackActions.loadWistiaUrl({ source })
       },
     }
 

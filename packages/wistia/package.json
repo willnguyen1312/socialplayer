@@ -1,7 +1,7 @@
 {
-  "name": "@socialplayer/streamable-plugin",
-  "version": "0.1.0",
-  "description": "A Streamable implementation of socialplayer",
+  "name": "@socialplayer/wistia-plugin",
+  "version": "0.0.0",
+  "description": "A Wistia implementation of socialplayer",
   "author": "Nam Nguyen <nam.nguyen.node@gmail.com>",
   "repository": "willnguyen1312/socialplayer",
   "homepage": "https://github.com/sponsors/willnguyen1312",
@@ -19,7 +19,7 @@
     "desktop",
     "social",
     "player",
-    "streamable"
+    "wistia"
   ],
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
