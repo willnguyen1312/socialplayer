@@ -1,0 +1,53 @@
+{
+  "name": "@socialplayer/wistia-plugin",
+  "version": "0.0.0",
+  "description": "A Wistia implementation of socialplayer",
+  "author": "Nam Nguyen <nam.nguyen.node@gmail.com>",
+  "repository": "willnguyen1312/socialplayer",
+  "homepage": "https://github.com/sponsors/willnguyen1312",
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/willnguyen1312"
+  },
+  "keywords": [
+    "javascript",
+    "typescript",
+    "video",
+    "audio",
+    "playback",
+    "mobile",
+    "desktop",
+    "social",
+    "player",
+    "wistia"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "license": "MIT",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsup src terse",
+    "dev": "tsup src --watch",
+    "lint": "eslint \"src/**/*.ts*\"",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+  },
+  "devDependencies": {
+    "@namnode/utils": "^0.3.0",
+    "eslint": "^8.42.0",
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*",
+    "tsup": "^6.7.0",
+    "typescript": "^5.1.3"
+  },
+  "dependencies": {
+    "@socialplayer/core": "workspace:*"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

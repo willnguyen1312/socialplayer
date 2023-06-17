@@ -31,7 +31,7 @@ const sources: SourceItem[] = [
   },
   {
     name: "youtube",
-    source: "WZKW2Hq2fks",
+    source: "https://www.youtube.com/watch?v=WZKW2Hq2fks",
   },
   {
     name: "vimeo",

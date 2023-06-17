@@ -220,6 +220,9 @@ importers:
       '@socialplayer/vimeo-plugin':
         specifier: latest
         version: link:../../packages/vimeo
+      '@socialplayer/wistia-plugin':
+        specifier: latest
+        version: link:../../packages/wistia
       '@socialplayer/youtube-plugin':
         specifier: latest
         version: link:../../packages/youtube
@@ -631,6 +634,31 @@ importers:
       '@types/node':
         specifier: ^20.3.1
         version: 20.3.1
+      eslint:
+        specifier: ^8.42.0
+        version: 8.42.0
+      eslint-config-custom:
+        specifier: workspace:*
+        version: link:../eslint-config-custom
+      tsconfig:
+        specifier: workspace:*
+        version: link:../tsconfig
+      tsup:
+        specifier: ^6.7.0
+        version: 6.7.0(postcss@8.4.24)(typescript@5.1.3)
+      typescript:
+        specifier: ^5.1.3
+        version: 5.1.3
+
+  packages/wistia:
+    dependencies:
+      '@socialplayer/core':
+        specifier: workspace:*
+        version: link:../core
+    devDependencies:
+      '@namnode/utils':
+        specifier: ^0.3.0
+        version: 0.3.0
       eslint:
         specifier: ^8.42.0
         version: 8.42.0
