@@ -1,5 +1,13 @@
 # @socialplayer/twitch-plugin
 
+## 0.1.1
+
+### Patch Changes
+
+- Updated dependencies
+  [[`bf5c45e`](https://github.com/willnguyen1312/socialplayer/commit/bf5c45e9c59fd4196a86ad08601dc1f14febcc7c)]:
+  - @socialplayer/core@0.1.1
+
 ## 0.1.0
 
 ### Minor Changes
