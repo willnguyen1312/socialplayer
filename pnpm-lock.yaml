@@ -208,6 +208,9 @@ importers:
       '@socialplayer/facebook-plugin':
         specifier: latest
         version: link:../../packages/facebook
+      '@socialplayer/mixcloud-plugin':
+        specifier: latest
+        version: link:../../packages/mixcloud
       '@socialplayer/soundcloud-plugin':
         specifier: latest
         version: link:../../packages/soundcloud
@@ -251,6 +254,9 @@ importers:
       '@socialplayer/facebook-plugin':
         specifier: latest
         version: link:../../packages/facebook
+      '@socialplayer/mixcloud-plugin':
+        specifier: latest
+        version: link:../../packages/mixcloud
       '@socialplayer/soundcloud-plugin':
         specifier: latest
         version: link:../../packages/soundcloud
@@ -356,6 +362,31 @@ importers:
         version: link:../tsconfig
 
   packages/facebook:
+    dependencies:
+      '@socialplayer/core':
+        specifier: workspace:*
+        version: link:../core
+    devDependencies:
+      '@namnode/utils':
+        specifier: ^0.3.0
+        version: 0.3.0
+      eslint:
+        specifier: ^8.43.0
+        version: 8.43.0
+      eslint-config-custom:
+        specifier: workspace:*
+        version: link:../eslint-config-custom
+      tsconfig:
+        specifier: workspace:*
+        version: link:../tsconfig
+      tsup:
+        specifier: ^7.0.0
+        version: 7.0.0(postcss@8.4.24)(typescript@5.1.3)
+      typescript:
+        specifier: ^5.1.3
+        version: 5.1.3
+
+  packages/mixcloud:
     dependencies:
       '@socialplayer/core':
         specifier: workspace:*
@@ -3114,7 +3145,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001503
+      caniuse-lite: 1.0.30001504
       electron-to-chromium: 1.4.433
       node-releases: 2.0.12
       update-browserslist-db: 1.0.11(browserslist@4.21.9)
@@ -3178,8 +3209,8 @@ packages:
     engines: {node: '>=6'}
     dev: false
 
-  /caniuse-lite@1.0.30001503:
-    resolution: {integrity: sha512-Sf9NiF+wZxPfzv8Z3iS0rXM1Do+iOy2Lxvib38glFX+08TCYYYGR5fRJXk4d77C4AYwhUjgYgMsMudbh2TqCKw==}
+  /caniuse-lite@1.0.30001504:
+    resolution: {integrity: sha512-5uo7eoOp2mKbWyfMXnGO9rJWOGU8duvzEiYITW+wivukL7yHH4gX9yuRaobu6El4jPxo6jKZfG+N6fB621GD/Q==}
     dev: true
 
   /ccount@2.0.1:

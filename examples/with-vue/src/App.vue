@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { facebookPlugin } from "@socialplayer/facebook-plugin"
+import { mixcloudPlugin } from "@socialplayer/mixcloud-plugin"
 import { soundcloudPlugin } from "@socialplayer/soundcloud-plugin"
 import { streamablePlugin } from "@socialplayer/streamable-plugin"
 import { twitchPlugin } from "@socialplayer/twitch-plugin"
@@ -19,9 +20,19 @@ useSocialPlayer.use(soundcloudPlugin)
 useSocialPlayer.use(streamablePlugin)
 useSocialPlayer.use(twitchPlugin)
 useSocialPlayer.use(vidyardPlugin)
+useSocialPlayer.use(mixcloudPlugin)
 useSocialPlayer.use(wistiaPlugin)
 
-type SocialPlayerName = "facebook" | "youtube" | "vimeo" | "soundcloud" | "streamable" | "twitch" | "wistia" | "vidyard"
+type SocialPlayerName =
+  | "facebook"
+  | "youtube"
+  | "vimeo"
+  | "soundcloud"
+  | "streamable"
+  | "twitch"
+  | "wistia"
+  | "vidyard"
+  | "mixcloud"
 
 type SourceItem = {
   name: SocialPlayerName
@@ -61,6 +72,10 @@ const sources: SourceItem[] = [
     name: "vidyard",
     source: "https://video.vidyard.com/watch/4Z3JEiuHGCbGWAhith9GpS",
   },
+  {
+    name: "mixcloud",
+    source: "https://www.mixcloud.com/lBOSS/demost92-deejayboss/",
+  },
 ]
 
 const buttonNames = sources.map((item) => item.name)
@@ -73,6 +88,7 @@ const { playbackActions: streamablePlaybackActions } = useSocialPlayer({ id: "st
 const { playbackActions: twitchPlaybackActions } = useSocialPlayer({ id: "twitch" })
 const { playbackActions: wistiaPlaybackActions } = useSocialPlayer({ id: "wistia" })
 const { playbackActions: vidyardPlaybackActions } = useSocialPlayer({ id: "vidyard" })
+const { playbackActions: mixcloudPlaybackActions } = useSocialPlayer({ id: "mixcloud" })
 
 const currentSocialPlayerName = ref<SocialPlayerName>(sources[0].name)
 
@@ -111,6 +127,9 @@ watchEffect(
       vidyard: () => {
         vidyardPlaybackActions.loadVidyardUrl({ source })
       },
+      mixcloud: () => {
+        mixcloudPlaybackActions.loadMixcloudUrl({ source })
+      },
     }
 
     const handler = handlers[currentSocialPlayerName.value as keyof typeof handlers]
@@ -148,6 +167,10 @@ watchEffect(
 
       <div class="h-full w-full" v-show="currentSocialPlayerName === 'wistia'">
         <div class="h-full w-full" id="wistia"></div>
+      </div>
+
+      <div class="h-full w-full" v-show="currentSocialPlayerName === 'mixcloud'">
+        <div class="flex h-full w-full" id="mixcloud"></div>
       </div>
 
       <div class="h-full w-full" v-show="currentSocialPlayerName === 'vidyard'">

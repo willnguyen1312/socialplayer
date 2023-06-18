@@ -24,17 +24,17 @@
     "twitch"
   ],
   "scripts": {
-    "build:docs": "turbo build --filter=docs... --force",
-    "build": "turbo build",
+    "build:docs": "turbo build --filter=docs... --force --concurrency 20",
+    "build": "turbo build --concurrency 20",
     "changeset": "changeset",
-    "check": "turbo run build typecheck lint test --filter=!docs",
-    "clean": "turbo clean && rm -rf node_modules",
+    "check": "turbo run build typecheck lint test --filter=!docs --concurrency 20",
+    "clean": "turbo clean && rm -rf node_modules --concurrency 20",
     "core": "pnpm --filter=@socialplayer/core",
     "format:check": "prettier --check ./**/*.{js,ts,tsx,mjs,json,vue,svelte}",
     "format:fix": "prettier --write ./**/*.{js,ts,tsx,mjs,json,vue,svelte}",
-    "lint": "turbo lint",
-    "postbuild": "pnpm run size",
-    "react": "pnpm --filter=@socialplayer/react",
+    "lint": "turbo lint --concurrency 20",
+    "postbuild": "pnpm run size --concurrency 20",
+    "react": "pnpm --filter=@socialplayer/react --concurrency 20",
     "release": "pnpm check && changeset version && changeset publish",
     "size": "esno scripts/size-limit.ts",
     "start-docs": "turbo dev --filter=docs... --concurrency 20",
@@ -46,7 +46,7 @@
     "start-vanilla": "turbo dev --filter=with-vanilla... --concurrency 20",
     "start-vue": "turbo dev --filter=with-vue... --concurrency 20",
     "turbo:update": "pnpx @turbo/codemod update",
-    "typecheck": "turbo run typecheck"
+    "typecheck": "turbo run typecheck --concurrency 20"
   },
   "dependencies": {
     "@changesets/changelog-github": "^0.4.8",
