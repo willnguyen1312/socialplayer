@@ -3,6 +3,7 @@ import "virtual:uno.css"
 
 import { createPlayer } from "@socialplayer/core"
 import { facebookPlugin } from "@socialplayer/facebook-plugin"
+import { mixcloudPlugin } from "@socialplayer/mixcloud-plugin"
 import { soundcloudPlugin } from "@socialplayer/soundcloud-plugin"
 import { streamablePlugin } from "@socialplayer/streamable-plugin"
 import { twitchPlugin } from "@socialplayer/twitch-plugin"
@@ -21,6 +22,7 @@ createPlayer.use(streamablePlugin)
 createPlayer.use(wistiaPlugin)
 createPlayer.use(twitchPlugin)
 createPlayer.use(vidyardPlugin)
+createPlayer.use(mixcloudPlugin)
 
 const id = "video"
 const result = createPlayer({ id })
@@ -37,7 +39,16 @@ const getTemplate = (id: string) => {
 const container = document.querySelector("#container") as HTMLDivElement
 const buttons = document.querySelectorAll("#list-of-social-player button") as NodeListOf<HTMLButtonElement>
 
-type SocialPlayerName = "facebook" | "youtube" | "vimeo" | "soundcloud" | "streamable" | "twitch" | "wistia" | "vidyard"
+type SocialPlayerName =
+  | "facebook"
+  | "youtube"
+  | "vimeo"
+  | "soundcloud"
+  | "streamable"
+  | "twitch"
+  | "wistia"
+  | "vidyard"
+  | "mixcloud"
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -71,6 +82,9 @@ buttons.forEach((button) => {
       },
       vidyard: () => {
         result.playbackActions.loadVidyardUrl({ source })
+      },
+      mixcloud: () => {
+        result.playbackActions.loadMixcloudUrl({ source })
       },
     }
 

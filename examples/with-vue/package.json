@@ -8,13 +8,14 @@
   "dependencies": {
     "@socialplayer/core": "latest",
     "@socialplayer/facebook-plugin": "latest",
+    "@socialplayer/mixcloud-plugin": "latest",
     "@socialplayer/soundcloud-plugin": "latest",
     "@socialplayer/streamable-plugin": "latest",
     "@socialplayer/twitch-plugin": "latest",
+    "@socialplayer/vidyard-plugin": "latest",
     "@socialplayer/vimeo-plugin": "latest",
     "@socialplayer/vue": "latest",
     "@socialplayer/wistia-plugin": "latest",
-    "@socialplayer/vidyard-plugin": "latest",
     "@socialplayer/youtube-plugin": "latest",
     "vue": "^3.3.4"
   },
