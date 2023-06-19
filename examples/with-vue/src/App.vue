@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { dailymotionPlugin } from "@socialplayer/dailymotion-plugin"
 import { facebookPlugin } from "@socialplayer/facebook-plugin"
 import { mixcloudPlugin } from "@socialplayer/mixcloud-plugin"
 import { soundcloudPlugin } from "@socialplayer/soundcloud-plugin"
@@ -22,6 +23,7 @@ useSocialPlayer.use(twitchPlugin)
 useSocialPlayer.use(vidyardPlugin)
 useSocialPlayer.use(mixcloudPlugin)
 useSocialPlayer.use(wistiaPlugin)
+useSocialPlayer.use(dailymotionPlugin, { playerId: "xfpfw" })
 
 type SocialPlayerName =
   | "facebook"
@@ -33,6 +35,7 @@ type SocialPlayerName =
   | "wistia"
   | "vidyard"
   | "mixcloud"
+  | "dailymotion"
 
 type SourceItem = {
   name: SocialPlayerName
@@ -76,6 +79,10 @@ const sources: SourceItem[] = [
     name: "mixcloud",
     source: "https://www.mixcloud.com/lBOSS/demost92-deejayboss/",
   },
+  {
+    name: "dailymotion",
+    source: "x7tgad0",
+  },
 ]
 
 const buttonNames = sources.map((item) => item.name)
@@ -89,6 +96,7 @@ const { playbackActions: twitchPlaybackActions } = useSocialPlayer({ id: "twitch
 const { playbackActions: wistiaPlaybackActions } = useSocialPlayer({ id: "wistia" })
 const { playbackActions: vidyardPlaybackActions } = useSocialPlayer({ id: "vidyard" })
 const { playbackActions: mixcloudPlaybackActions } = useSocialPlayer({ id: "mixcloud" })
+const { playbackActions: dailymotionPlaybackActions } = useSocialPlayer({ id: "dailymotion" })
 
 const currentSocialPlayerName = ref<SocialPlayerName>(sources[0].name)
 
@@ -130,6 +138,9 @@ watchEffect(
       mixcloud: () => {
         mixcloudPlaybackActions.loadMixcloudUrl({ source })
       },
+      dailymotion: () => {
+        dailymotionPlaybackActions.loadDailymotionUrl({ videoId: source })
+      },
     }
 
     const handler = handlers[currentSocialPlayerName.value as keyof typeof handlers]
@@ -141,7 +152,7 @@ watchEffect(
 
 <template>
   <div class="space-y-4 p-4">
-    <div class="h-[400px] w-[600px]">
+    <div class="h-[600px] w-[600px]">
       <div class="h-full w-full" v-show="currentSocialPlayerName === 'facebook'">
         <div class="h-full w-full" id="facebook"></div>
       </div>
@@ -171,6 +182,10 @@ watchEffect(
 
       <div class="h-full w-full" v-show="currentSocialPlayerName === 'mixcloud'">
         <div class="flex h-full w-full" id="mixcloud"></div>
+      </div>
+
+      <div class="h-full w-full" v-show="currentSocialPlayerName === 'dailymotion'">
+        <div class="flex h-full w-full" id="dailymotion"></div>
       </div>
 
       <div class="h-full w-full" v-show="currentSocialPlayerName === 'vidyard'">

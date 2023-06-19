@@ -254,6 +254,9 @@ importers:
       '@socialplayer/core':
         specifier: latest
         version: link:../../packages/core
+      '@socialplayer/dailymotion-plugin':
+        specifier: latest
+        version: link:../../packages/dailymotion
       '@socialplayer/facebook-plugin':
         specifier: latest
         version: link:../../packages/facebook
