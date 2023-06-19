@@ -21,6 +21,7 @@
     "@socialplayer/vidyard-plugin": "latest",
     "@socialplayer/vimeo-plugin": "latest",
     "@socialplayer/wistia-plugin": "latest",
-    "@socialplayer/youtube-plugin": "latest"
+    "@socialplayer/youtube-plugin": "latest",
+    "@socialplayer/dailymotion-plugin": "latest"
   }
 }

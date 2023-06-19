@@ -2,6 +2,7 @@ import "@unocss/reset/tailwind.css"
 import "virtual:uno.css"
 
 import { createPlayer } from "@socialplayer/core"
+import { dailymotionPlugin } from "@socialplayer/dailymotion-plugin"
 import { facebookPlugin } from "@socialplayer/facebook-plugin"
 import { mixcloudPlugin } from "@socialplayer/mixcloud-plugin"
 import { soundcloudPlugin } from "@socialplayer/soundcloud-plugin"
@@ -23,6 +24,7 @@ createPlayer.use(wistiaPlugin)
 createPlayer.use(twitchPlugin)
 createPlayer.use(vidyardPlugin)
 createPlayer.use(mixcloudPlugin)
+createPlayer.use(dailymotionPlugin, { playerId: "xfpfw" })
 
 const id = "video"
 const result = createPlayer({ id })
@@ -49,6 +51,7 @@ type SocialPlayerName =
   | "wistia"
   | "vidyard"
   | "mixcloud"
+  | "dailymotion"
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -85,6 +88,9 @@ buttons.forEach((button) => {
       },
       mixcloud: () => {
         result.playbackActions.loadMixcloudUrl({ source })
+      },
+      dailymotion: () => {
+        result.playbackActions.loadDailymotionUrl({ videoId: source })
       },
     }
 
