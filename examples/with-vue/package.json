@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "@socialplayer/core": "latest",
+    "@socialplayer/dailymotion-plugin": "latest",
     "@socialplayer/facebook-plugin": "latest",
     "@socialplayer/mixcloud-plugin": "latest",
     "@socialplayer/soundcloud-plugin": "latest",
@@ -17,7 +18,6 @@
     "@socialplayer/vue": "latest",
     "@socialplayer/wistia-plugin": "latest",
     "@socialplayer/youtube-plugin": "latest",
-    "@socialplayer/dailymotion-plugin": "latest",
     "vue": "^3.3.4"
   },
   "devDependencies": {
