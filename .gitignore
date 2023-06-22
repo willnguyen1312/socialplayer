@@ -180,6 +180,7 @@ e2e/results
 
 # Vitepress
 cache
+.temp
 
 # PNPM stuff
 .pnpm-store

@@ -40,6 +40,19 @@ A simple yet complete playback library designed for UI frameworks or even withou
 - ✅ React
 - ✅ Qwik
 
+## Supported social media players
+
+- [YouTube](https://developers.google.com/youtube/iframe_api_reference)
+- [Facebook](https://developers.facebook.com/docs/plugins/embedded-video-player/api)
+- [SoundCloud](https://developers.soundcloud.com/docs/api/html5-widget)
+- [Vimeo](https://developer.vimeo.com/player/sdk/basics)
+- [Wistia](https://wistia.com/doc/player-api)
+- [Twitch](https://dev.twitch.tv/docs/embed/video-and-clips/)
+- [DailyMotion](https://developers.dailymotion.com/player/#player-library-script)
+- [Vidyard](https://knowledge.vidyard.com/hc/en-us/articles/360019034753-Using-the-Vidyard-Player-API)
+- [Mixcloud](https://www.mixcloud.com/developers/widget/#getting-started)
+- [Streamable](https://streamable.com) player is powered by [Player.js](https://github.com/embedly/player.js)
+
 ## Inspiration
 
 - [Tanstack](https://tanstack.com) - A collection of high-quality open source libraries for web developers
