@@ -362,8 +362,44 @@ importers:
   packages/docs:
     dependencies:
       '@socialplayer/core':
-        specifier: workspace:*
+        specifier: latest
         version: link:../core
+      '@socialplayer/dailymotion-plugin':
+        specifier: latest
+        version: link:../dailymotion
+      '@socialplayer/facebook-plugin':
+        specifier: latest
+        version: link:../facebook
+      '@socialplayer/mixcloud-plugin':
+        specifier: latest
+        version: link:../mixcloud
+      '@socialplayer/soundcloud-plugin':
+        specifier: latest
+        version: link:../soundcloud
+      '@socialplayer/streamable-plugin':
+        specifier: latest
+        version: link:../streamable
+      '@socialplayer/twitch-plugin':
+        specifier: latest
+        version: link:../twitch
+      '@socialplayer/vidyard-plugin':
+        specifier: latest
+        version: link:../vidyard
+      '@socialplayer/vimeo-plugin':
+        specifier: latest
+        version: link:../vimeo
+      '@socialplayer/vue':
+        specifier: latest
+        version: link:../vue
+      '@socialplayer/wistia-plugin':
+        specifier: latest
+        version: link:../wistia
+      '@socialplayer/youtube-plugin':
+        specifier: latest
+        version: link:../youtube
+      '@unocss/reset':
+        specifier: ^0.53.1
+        version: 0.53.1
       vitepress:
         specifier: 1.0.0-beta.2
         version: 1.0.0-beta.2(@algolia/client-search@4.17.2)(search-insights@2.6.0)

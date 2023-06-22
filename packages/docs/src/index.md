@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "Social Player"
-  text: "A simple yet complete playback library for the web"
+  text: "A simple yet powerful library to playback social media"
   actions:
     - theme: brand
       text: Get Started
@@ -21,3 +21,11 @@ features:
   - title: Performance 🚀
     details: Optimized for speed at scale
 ---
+
+<script setup>
+import HomePageShow from './components/HomePageShow.vue'
+import Footer from './components/FooterComp.vue'
+</script>
+
+<HomePageShow />
+<Footer />

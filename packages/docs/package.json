@@ -25,7 +25,19 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@socialplayer/core": "workspace:*",
+    "@socialplayer/core": "latest",
+    "@socialplayer/dailymotion-plugin": "latest",
+    "@socialplayer/facebook-plugin": "latest",
+    "@socialplayer/mixcloud-plugin": "latest",
+    "@socialplayer/soundcloud-plugin": "latest",
+    "@socialplayer/streamable-plugin": "latest",
+    "@socialplayer/twitch-plugin": "latest",
+    "@socialplayer/vidyard-plugin": "latest",
+    "@socialplayer/vimeo-plugin": "latest",
+    "@socialplayer/vue": "latest",
+    "@socialplayer/wistia-plugin": "latest",
+    "@socialplayer/youtube-plugin": "latest",
+    "@unocss/reset": "^0.53.1",
     "vitepress": "1.0.0-beta.2",
     "vue": "^3.3.4"
   }
