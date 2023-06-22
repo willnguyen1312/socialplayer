@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "Social Player"
-  text: "A simple yet powerful library to playback social media"
+  tagline: "A simple yet powerful library to playback social media video for the web"
   actions:
     - theme: brand
       text: Get Started
@@ -15,11 +15,11 @@ hero:
 
 features:
   - title: Social player 💅
-    details: Bring your own beautiful UI
+    details: Support major social media platforms
   - title: Plugins ⚙︎
     details: The core library is extensible with plugins
   - title: Performance 🚀
-    details: Optimized for speed at scale
+    details: The bundle size is small < 1KB
 ---
 
 <script setup>
