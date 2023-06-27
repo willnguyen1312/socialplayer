@@ -6,8 +6,8 @@
     "dev": "vite"
   },
   "dependencies": {
-    "@socialplayer/core": "workspace:^",
-    "@socialplayer/svelte": "workspace:^"
+    "@socialplayer/core": "latest",
+    "@socialplayer/svelte": "latest"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^2.4.2",
