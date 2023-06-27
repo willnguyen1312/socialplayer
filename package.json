@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "@changesets/changelog-github": "^0.4.8",
-    "@changesets/cli": "^2.26.1",
+    "@changesets/cli": "^2.26.2",
     "eslint": "^8.43.0",
     "eslint-config-custom": "workspace:*",
     "esno": "^0.16.3",
