@@ -1,33 +1,53 @@
 {
   "@socialplayer/core": {
-    "createPlayer": "560 B"
+    "createPlayer": "195 B"
   },
-  "@socialplayer/react": {
-    "useSocialPlayer": "742 B"
-  },
-  "@socialplayer/qwik": {
-    "useSocialPlayer": "986 B",
-    "_auto_playbackInstanceMap": "77 B"
-  },
-  "@socialplayer/solid": {
-    "useSocialPlayer": "2.07 KB"
-  },
-  "@socialplayer/svelte": {
-    "useSocialPlayer": "953 B"
-  },
-  "@socialplayer/vue": {
-    "useSocialPlayer": "722 B"
+  "@socialplayer/dailymotion-plugin": {
+    "dailymotionPlugin": "271 B"
   },
   "@socialplayer/facebook-plugin": {
-    "facebookPlugin": "368 B"
+    "facebookPlugin": "312 B"
   },
-  "@socialplayer/youtube-plugin": {
-    "youtubePlugin": "349 B"
+  "@socialplayer/mixcloud-plugin": {
+    "mixcloudPlugin": "324 B"
   },
-  "@socialplayer/vimeo-plugin": {
-    "vimeoPlugin": "360 B"
+  "@socialplayer/preact": {
+    "useSocialPlayer": "921 B"
+  },
+  "@socialplayer/qwik": {
+    "useSocialPlayer": "336 B"
+  },
+  "@socialplayer/react": {
+    "useSocialPlayer": "248 B"
+  },
+  "@socialplayer/solid": {
+    "useSocialPlayer": "218 B"
   },
   "@socialplayer/soundcloud-plugin": {
-    "soundcloudPlugin": "322 B"
+    "soundcloudPlugin": "294 B"
+  },
+  "@socialplayer/streamable-plugin": {
+    "streamablePlugin": "290 B"
+  },
+  "@socialplayer/svelte": {
+    "useSocialPlayer": "218 B"
+  },
+  "@socialplayer/twitch-plugin": {
+    "twitchPlugin": "317 B"
+  },
+  "@socialplayer/vidyard-plugin": {
+    "vidyardPlugin": "295 B"
+  },
+  "@socialplayer/vimeo-plugin": {
+    "vimeoPlugin": "297 B"
+  },
+  "@socialplayer/vue": {
+    "useSocialPlayer": "218 B"
+  },
+  "@socialplayer/wistia-plugin": {
+    "wistiaPlugin": "337 B"
+  },
+  "@socialplayer/youtube-plugin": {
+    "youtubePlugin": "351 B"
   }
 }
