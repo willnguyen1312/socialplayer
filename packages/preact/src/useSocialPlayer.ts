@@ -8,7 +8,6 @@ type useSocialPlayerFunc = {
   (arg: Parameters<CreatePlayer>[0]): {
     playbackState: SocialPlayerState
     playbackActions: SocialPlayerActions
-    activate: () => void
   }
   use: PluginFunc
 }
@@ -32,17 +31,6 @@ export const useSocialPlayer: useSocialPlayerFunc = (arg) => {
     })
   }
 
-  const activate = () => {
-    const playbackInstance = playbackInstanceMap.get(arg.id) as ReturnType<CreatePlayer>
-    const isActivated = playbackInstance.activate()
-    if (isActivated) {
-      playbackInstance.onCleanup(() => {
-        playbackStateMaster.delete(arg.id)
-        playbackInstanceMap.delete(arg.id)
-      })
-    }
-  }
-
   useEffect(() => {
     return () => {
       playbackInstanceMap.get(arg.id)?.cleanup()
@@ -53,7 +41,7 @@ export const useSocialPlayer: useSocialPlayerFunc = (arg) => {
 
   return {
     playbackState,
-    activate,
+
     playbackActions: (playbackInstanceMap.get(arg.id) as ReturnType<CreatePlayer>).playbackActions,
   }
 }

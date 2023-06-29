@@ -1,4 +1,4 @@
-import { $, noSerialize, useStore, useVisibleTask$ } from "@builder.io/qwik"
+import { $, noSerialize, useStore } from "@builder.io/qwik"
 import { Plugin, PluginFunc, SocialPlayerActions, SocialPlayerState, createPlayer } from "@socialplayer/core"
 
 type CreatePlayer = typeof createPlayer
@@ -7,7 +7,7 @@ type useSocialPlayerFunc = {
   (arg: Parameters<CreatePlayer>[0]): {
     playbackState: SocialPlayerState
     playbackActions: SocialPlayerActions
-    activate: () => void
+
     use: PluginFunc
   }
 }
@@ -20,7 +20,6 @@ export const useSocialPlayer: useSocialPlayerFunc = (arg) => {
 
   const activate = $(() => {
     const playbackInstance = playbackInstanceMap.get(arg.id) ?? createPlayer(arg)
-    playbackInstance.activate()
     playbackInstance.onCleanup(() => {
       playbackInstanceMap.delete(arg.id)
     })
@@ -74,13 +73,9 @@ export const useSocialPlayer: useSocialPlayerFunc = (arg) => {
     Object.assign(playbackActionsRef.value, result)
   })
 
-  useVisibleTask$(() => {
-    activate()
-  })
-
   return {
     playbackState,
-    activate,
+
     playbackActions: playbackActionsRef.value,
     use,
   }
