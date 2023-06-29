@@ -1,7 +1,25 @@
 import { getExportsSize } from "export-size"
 import fs from "fs/promises"
 
-const packages = ["core", "react", "qwik", "solid", "svelte", "vue", "facebook", "youtube", "vimeo", "soundcloud"]
+const packages = [
+  "core",
+  "dailymotion",
+  "facebook",
+  "mixcloud",
+  "preact",
+  "qwik",
+  "react",
+  "solid",
+  "soundcloud",
+  "streamable",
+  "svelte",
+  "twitch",
+  "vidyard",
+  "vimeo",
+  "vue",
+  "wistia",
+  "youtube",
+]
 
 function formatBytes(bytes, decimals = 2) {
   if (bytes === 0) return "0 Bytes"

@@ -64,7 +64,7 @@ function App() {
   }
 
   return (
-    <div id="app" className="p-4">
+    <div className="p-4">
       <video hidden id={id}></video>
 
       <CurrentTime />

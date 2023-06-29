@@ -68,7 +68,7 @@ const App: Component = () => {
   }
 
   return (
-    <div id="app" class="p-4">
+    <div class="p-4">
       <div class="border-emerald border-1 h-[400px] w-[600px]">
         <video class="h-full w-full" id="video" controls></video>
       </div>

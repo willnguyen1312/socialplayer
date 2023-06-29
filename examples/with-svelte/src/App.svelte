@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { useSocialPlayer } from "@socialplayer/svelte"
-  import { hlsPlaybackPlugin } from "@socialplayer/plugins"
   import type { PlaybackState } from "@socialplayer/core"
-  import { onDestroy, onMount, tick } from "svelte"
+  import { hlsPlaybackPlugin } from "@socialplayer/plugins"
+  import { useSocialPlayer } from "@socialplayer/svelte"
+  import { onDestroy, onMount } from "svelte"
   useSocialPlayer.use(hlsPlaybackPlugin)
 
   const {
@@ -43,7 +43,7 @@
   $: handleSource(source)
 </script>
 
-<div id="app" class="p-4">
+<div class="p-4">
   <div class="border-emerald border-1 h-[400px] w-[600px]">
     <!-- src={source} -->
     <video {id} class="h-full w-full" controls>

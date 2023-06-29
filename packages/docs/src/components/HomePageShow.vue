@@ -6,7 +6,7 @@ const AsyncSocialPlayer = defineAsyncComponent(() => import("./SocialPlayer.vue"
 
 <template>
   <div
-    class="min-h-xl m-x-auto rounded-4 container mt-4 flex h-[700px] flex-col space-y-4 bg-white p-4 p-4 font-sans text-black"
+    class="min-h-xl m-x-auto rounded-4 xs-hidden sm-block container mt-4 flex h-[720px] flex-col space-y-4 bg-white p-4 p-4 font-sans text-black"
   >
     <ClientOnly>
       <AsyncSocialPlayer />
