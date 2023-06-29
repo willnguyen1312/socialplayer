@@ -192,14 +192,14 @@ watchEffect(
     </div>
   </div>
 
-  <span class="isolate inline-flex rounded-md shadow-sm">
+  <div class="flex flex-wrap gap-2">
     <button
-      class="relative -ml-px inline-flex items-center bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10"
+      class="relative -ml-px inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10"
       v-for="name in buttonNames"
       :key="name"
       @click="handleButtonClick(name)"
     >
       {{ name.slice(0, 1).toUpperCase() + name.slice(1) }}
     </button>
-  </span>
+  </div>
 </template>
