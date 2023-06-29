@@ -12,7 +12,6 @@ type useSocialPlayerFunc = {
       subscribe: PlaybackStateSubscriber
     }
     playbackActions: SocialPlayerActions
-    activate: () => void
   }
   use: PluginFunc
 }
@@ -37,22 +36,10 @@ export const useSocialPlayer: useSocialPlayerFunc = (arg) => {
     playbackInstanceMap.get(arg.id)?.cleanup()
   })
 
-  const activate = () => {
-    const playbackInstance = playbackInstanceMap.get(arg.id) as ReturnType<CreatePlayer>
-    const isActivated = playbackInstance.activate()
-    if (isActivated) {
-      playbackInstance.onCleanup(() => {
-        playbackStateMaster.delete(arg.id)
-        playbackInstanceMap.delete(arg.id)
-      })
-    }
-  }
-
   return {
     playbackState: {
       subscribe: playbackStateMaster.get(arg.id) as PlaybackStateSubscriber,
     },
-    activate,
     playbackActions: (playbackInstanceMap.get(arg.id) as ReturnType<CreatePlayer>).playbackActions,
   }
 }

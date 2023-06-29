@@ -34,7 +34,6 @@ type CreatePlayerFunc = {
   (arg: { id: string }): {
     cleanup: () => void
     subscribe: (listener: StoreListener<CustomSocialPlayerState>) => () => void
-    activate: () => boolean
     getState: () => CustomSocialPlayerState
     playbackActions: CustomSocialPlayerActions
     onCleanup: (cb: CleanupFunc) => void
@@ -61,21 +60,6 @@ export const createPlayer: CreatePlayerFunc = ({ id }) => {
 
   const onCleanup: OnCleanupHook = (id: string, cb) => {
     cleanupCallbackMap.set(id, (cleanupCallbackMap.get(id) || new Set()).add(cb))
-  }
-
-  function activate() {
-    const socialPlayerContainer = document.getElementById(id) as HTMLElement | null
-
-    if (!socialPlayerContainer) {
-      throw new Error(`Playback container with id ${id} not found`)
-    }
-
-    if (socialPlayerContainerActivatedSet.has(socialPlayerContainer)) {
-      return false
-    }
-
-    socialPlayerContainerActivatedSet.add(socialPlayerContainer)
-    return true
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -113,7 +97,6 @@ export const createPlayer: CreatePlayerFunc = ({ id }) => {
       socialPlayerContainer = undefined
     },
     onCleanup: addCleanupCallback,
-    activate,
     subscribe: store.subscribe,
     getState: store.getState,
     playbackActions,
