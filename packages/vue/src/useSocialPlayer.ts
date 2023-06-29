@@ -9,16 +9,11 @@ type useSocialPlayerFunc = {
   use: PluginFunc
 }
 
-const playbackInstanceMap = new Map<string, ReturnType<CreatePlayer>>()
-
 export const useSocialPlayer: useSocialPlayerFunc = (arg) => {
-  if (!playbackInstanceMap.has(arg.id)) {
-    const playbackInstance = createPlayer(arg)
-    playbackInstanceMap.set(arg.id, playbackInstance)
-  }
+  const { playbackActions } = createPlayer(arg)
 
   return {
-    playbackActions: (playbackInstanceMap.get(arg.id) as ReturnType<CreatePlayer>).playbackActions,
+    playbackActions,
   }
 }
 
