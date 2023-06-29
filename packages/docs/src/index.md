@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "Social Player"
-  tagline: "A simple yet powerful library to playback social media video for the web"
+  tagline: "A simple yet powerful library to playback social media for the web"
   actions:
     - theme: brand
       text: Get Started
