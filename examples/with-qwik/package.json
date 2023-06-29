@@ -16,6 +16,16 @@
     "vite-tsconfig-paths": "4.2.0"
   },
   "dependencies": {
-    "@socialplayer/qwik": "latest"
+    "@socialplayer/dailymotion-plugin": "latest",
+    "@socialplayer/facebook-plugin": "latest",
+    "@socialplayer/mixcloud-plugin": "latest",
+    "@socialplayer/qwik": "latest",
+    "@socialplayer/soundcloud-plugin": "latest",
+    "@socialplayer/streamable-plugin": "latest",
+    "@socialplayer/twitch-plugin": "latest",
+    "@socialplayer/vidyard-plugin": "latest",
+    "@socialplayer/vimeo-plugin": "latest",
+    "@socialplayer/wistia-plugin": "latest",
+    "@socialplayer/youtube-plugin": "latest"
   }
 }

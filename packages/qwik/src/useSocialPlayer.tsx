@@ -6,7 +6,6 @@ type CreatePlayer = typeof createPlayer
 type useSocialPlayerFunc = {
   (arg: Parameters<CreatePlayer>[0]): {
     playbackActions: SocialPlayerActions
-
     use: PluginFunc
   }
 }
@@ -14,9 +13,9 @@ type useSocialPlayerFunc = {
 export const useSocialPlayer: useSocialPlayerFunc = (arg) => {
   const playbackActionsRef: { value: SocialPlayerActions } = { value: {} as SocialPlayerActions }
 
-  const use: PluginFunc = $((plugin: Plugin) => {
+  const use: PluginFunc = $((plugin: Plugin, options = {}) => {
     const { use } = createPlayer(arg)
-    const result = use(plugin)
+    const result = use(plugin, options)
     Object.assign(playbackActionsRef.value, result)
   })
 

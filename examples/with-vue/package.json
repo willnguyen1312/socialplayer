@@ -6,7 +6,6 @@
     "dev": "vite"
   },
   "dependencies": {
-    "@socialplayer/core": "latest",
     "@socialplayer/dailymotion-plugin": "latest",
     "@socialplayer/facebook-plugin": "latest",
     "@socialplayer/mixcloud-plugin": "latest",
