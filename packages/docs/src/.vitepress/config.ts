@@ -107,9 +107,9 @@ export default defineConfig({
     search: {
       provider: "algolia",
       options: {
-        appId: "FKWOWYBGDZ",
-        apiKey: "e8482e2e60315de80cf25a96471b9dfa",
-        indexName: "zoom-image",
+        appId: "1DHLJZLW5E",
+        apiKey: "615f43332887295e4a2f5775cdef735a",
+        indexName: "socialplayer",
       },
     },
   },
