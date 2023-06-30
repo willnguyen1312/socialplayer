@@ -13,7 +13,17 @@
     "vite-plugin-solid": "^2.7.0"
   },
   "dependencies": {
+    "@socialplayer/dailymotion-plugin": "latest",
+    "@socialplayer/facebook-plugin": "latest",
+    "@socialplayer/mixcloud-plugin": "latest",
     "@socialplayer/solid": "latest",
+    "@socialplayer/soundcloud-plugin": "latest",
+    "@socialplayer/streamable-plugin": "latest",
+    "@socialplayer/twitch-plugin": "latest",
+    "@socialplayer/vidyard-plugin": "latest",
+    "@socialplayer/vimeo-plugin": "latest",
+    "@socialplayer/wistia-plugin": "latest",
+    "@socialplayer/youtube-plugin": "latest",
     "solid-js": "^1.7.7"
   }
 }

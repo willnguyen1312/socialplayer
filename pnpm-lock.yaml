@@ -169,9 +169,39 @@ importers:
 
   examples/with-solid:
     dependencies:
+      "@socialplayer/dailymotion-plugin":
+        specifier: latest
+        version: link:../../packages/dailymotion
+      "@socialplayer/facebook-plugin":
+        specifier: latest
+        version: link:../../packages/facebook
+      "@socialplayer/mixcloud-plugin":
+        specifier: latest
+        version: link:../../packages/mixcloud
       "@socialplayer/solid":
         specifier: latest
         version: link:../../packages/solid
+      "@socialplayer/soundcloud-plugin":
+        specifier: latest
+        version: link:../../packages/soundcloud
+      "@socialplayer/streamable-plugin":
+        specifier: latest
+        version: link:../../packages/streamable
+      "@socialplayer/twitch-plugin":
+        specifier: latest
+        version: link:../../packages/twitch
+      "@socialplayer/vidyard-plugin":
+        specifier: latest
+        version: link:../../packages/vidyard
+      "@socialplayer/vimeo-plugin":
+        specifier: latest
+        version: link:../../packages/vimeo
+      "@socialplayer/wistia-plugin":
+        specifier: latest
+        version: link:../../packages/wistia
+      "@socialplayer/youtube-plugin":
+        specifier: latest
+        version: link:../../packages/youtube
       solid-js:
         specifier: ^1.7.7
         version: 1.7.7
