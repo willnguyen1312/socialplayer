@@ -1,5 +1,13 @@
 # @socialplayer/react
 
+## 0.1.2
+
+### Patch Changes
+
+- [#36](https://github.com/willnguyen1312/socialplayer/pull/36)
+  [`0dbb192`](https://github.com/willnguyen1312/socialplayer/commit/0dbb1928eb6f6bf3f6380541113a51282939ed6b) Thanks
+  [@willnguyen1312](https://github.com/willnguyen1312)! - Fix react integration bug 💞
+
 ## 0.1.1
 
 ### Patch Changes
