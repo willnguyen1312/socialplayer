@@ -6,9 +6,19 @@
     "dev": "vite"
   },
   "dependencies": {
+    "@socialplayer/dailymotion-plugin": "latest",
+    "@socialplayer/facebook-plugin": "latest",
+    "@socialplayer/mixcloud-plugin": "latest",
     "@socialplayer/react": "latest",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "@socialplayer/soundcloud-plugin": "latest",
+    "@socialplayer/streamable-plugin": "latest",
+    "@socialplayer/twitch-plugin": "latest",
+    "@socialplayer/vidyard-plugin": "latest",
+    "@socialplayer/vimeo-plugin": "latest",
+    "@socialplayer/wistia-plugin": "latest",
+    "@socialplayer/youtube-plugin": "latest",
+    "react-dom": "^18.2.0",
+    "react": "^18.2.0"
   },
   "devDependencies": {
     "@types/node": "^20.3.2",
