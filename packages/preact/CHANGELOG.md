@@ -1,5 +1,13 @@
 # @socialplayer/preact
 
+## 0.1.2
+
+### Patch Changes
+
+- [#38](https://github.com/willnguyen1312/socialplayer/pull/38)
+  [`67cf60d`](https://github.com/willnguyen1312/socialplayer/commit/67cf60d8a8cbee928e219bf57c5485cfee8a367d) Thanks
+  [@willnguyen1312](https://github.com/willnguyen1312)! - Fix preact integration bug 🚀
+
 ## 0.1.1
 
 ### Patch Changes
