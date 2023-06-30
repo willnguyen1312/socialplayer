@@ -31,9 +31,6 @@ export const wistiaPlugin: Plugin = {
       videoContainer.classList.add(...className.split(" "))
       window._wq.push({
         id,
-        onReady: (video: HTMLVideoElement) => {
-          console.log("I got a handle to the video!", video)
-        },
       })
     }
 

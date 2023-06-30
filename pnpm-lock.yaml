@@ -194,12 +194,39 @@ importers:
 
   examples/with-svelte:
     dependencies:
-      "@socialplayer/core":
+      "@socialplayer/dailymotion-plugin":
         specifier: latest
-        version: link:../../packages/core
+        version: link:../../packages/dailymotion
+      "@socialplayer/facebook-plugin":
+        specifier: latest
+        version: link:../../packages/facebook
+      "@socialplayer/mixcloud-plugin":
+        specifier: latest
+        version: link:../../packages/mixcloud
+      "@socialplayer/soundcloud-plugin":
+        specifier: latest
+        version: link:../../packages/soundcloud
+      "@socialplayer/streamable-plugin":
+        specifier: latest
+        version: link:../../packages/streamable
       "@socialplayer/svelte":
         specifier: latest
         version: link:../../packages/svelte
+      "@socialplayer/twitch-plugin":
+        specifier: latest
+        version: link:../../packages/twitch
+      "@socialplayer/vidyard-plugin":
+        specifier: latest
+        version: link:../../packages/vidyard
+      "@socialplayer/vimeo-plugin":
+        specifier: latest
+        version: link:../../packages/vimeo
+      "@socialplayer/wistia-plugin":
+        specifier: latest
+        version: link:../../packages/wistia
+      "@socialplayer/youtube-plugin":
+        specifier: latest
+        version: link:../../packages/youtube
     devDependencies:
       "@sveltejs/vite-plugin-svelte":
         specifier: ^2.4.2
