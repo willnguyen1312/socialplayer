@@ -13,7 +13,7 @@ type useSocialPlayerFunc = {
 export const useSocialPlayer: useSocialPlayerFunc = (arg) => {
   const playbackInstanceRef = useRef<ReturnType<CreatePlayer>>()
 
-  if (playbackInstanceRef.current) {
+  if (!playbackInstanceRef.current) {
     playbackInstanceRef.current = createPlayer(arg)
   }
 
