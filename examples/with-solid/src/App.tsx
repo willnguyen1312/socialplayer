@@ -1,94 +1,227 @@
-import { hlsPlaybackPlugin } from "@socialplayer/plugins"
+import { dailymotionPlugin } from "@socialplayer/dailymotion-plugin"
+import { facebookPlugin } from "@socialplayer/facebook-plugin"
+import { mixcloudPlugin } from "@socialplayer/mixcloud-plugin"
 import { useSocialPlayer } from "@socialplayer/solid"
-import { createEffect, createSignal, onMount, type Component } from "solid-js"
-useSocialPlayer.use(hlsPlaybackPlugin)
+import { soundcloudPlugin } from "@socialplayer/soundcloud-plugin"
+import { streamablePlugin } from "@socialplayer/streamable-plugin"
+import { twitchPlugin } from "@socialplayer/twitch-plugin"
+import { vidyardPlugin } from "@socialplayer/vidyard-plugin"
+import { vimeoPlugin } from "@socialplayer/vimeo-plugin"
+import { wistiaPlugin } from "@socialplayer/wistia-plugin"
+import { youtubePlugin } from "@socialplayer/youtube-plugin"
+import { Component, createEffect, createSignal, For } from "solid-js"
 
-const source1 = "https://storage.googleapis.com/shaka-demo-assets/angel-one-hls/hls.m3u8"
-const source2 = "https://cdn.jwplayer.com/manifests/pZxWPRg4.m3u8"
+useSocialPlayer.use(facebookPlugin, {
+  appId: "1309697205772819",
+})
+useSocialPlayer.use(youtubePlugin)
+useSocialPlayer.use(vimeoPlugin)
+useSocialPlayer.use(soundcloudPlugin)
+useSocialPlayer.use(streamablePlugin)
+useSocialPlayer.use(twitchPlugin)
+useSocialPlayer.use(vidyardPlugin)
+useSocialPlayer.use(mixcloudPlugin)
+useSocialPlayer.use(wistiaPlugin)
+useSocialPlayer.use(dailymotionPlugin, { playerId: "xfpfw" })
 
-const Duration: Component = () => {
-  const { playbackState } = useSocialPlayer({
-    id: "video",
-  })
+type SocialPlayerName =
+  | "facebook"
+  | "youtube"
+  | "vimeo"
+  | "soundcloud"
+  | "streamable"
+  | "twitch"
+  | "wistia"
+  | "vidyard"
+  | "mixcloud"
+  | "dailymotion"
 
-  return <p>Duration: {playbackState.duration}</p>
+type SourceItem = {
+  name: SocialPlayerName
+  source: string
 }
 
-function CurrentTime() {
-  const playback = useSocialPlayer({
-    id: "video",
-  })
+const sources: SourceItem[] = [
+  {
+    name: "facebook",
+    source: "https://www.facebook.com/facebook/videos/3138286969730016",
+  },
+  {
+    name: "youtube",
+    source: "https://www.youtube.com/watch?v=WZKW2Hq2fks",
+  },
+  {
+    name: "vimeo",
+    source: "https://vimeo.com/365531165",
+  },
+  {
+    name: "soundcloud",
+    source: "https://soundcloud.com/kainalu-woodhall/see-you-again-tyler-the-creator",
+  },
+  {
+    name: "streamable",
+    source: "4h1i2",
+  },
+  {
+    name: "twitch",
+    source: "https://m.twitch.tv/videos/1619751464",
+  },
+  {
+    name: "wistia",
+    source: "https://home.wistia.com/medias/zs8hlyi5xz",
+  },
+  {
+    name: "vidyard",
+    source: "https://video.vidyard.com/watch/4Z3JEiuHGCbGWAhith9GpS",
+  },
+  {
+    name: "mixcloud",
+    source: "https://www.mixcloud.com/lBOSS/demost92-deejayboss/",
+  },
+  {
+    name: "dailymotion",
+    source: "x7tgad0",
+  },
+]
 
-  return <p>Current time: {playback.playbackState.currentTime}</p>
-}
-
-const Resolutions: Component = () => {
-  const { playbackState } = useSocialPlayer({
-    id: "video",
-  })
-
-  // Plugin will inject extra state to playbackState
-  return <strong>Levels: {playbackState.levels.map((level) => level.height).join(", ")}</strong>
-}
+const buttonNames = sources.map((item) => item.name)
 
 const App: Component = () => {
-  const { activate, playbackActions, playbackState } = useSocialPlayer({
-    id: "video",
-  })
-  const [showDuration, setShowDuration] = createSignal(true)
-  const [source, setSource] = createSignal(source1)
+  const [currentSource, setCurrentSource] = createSignal<SocialPlayerName>(sources[0].name)
+  const { playbackActions: facebookPlaybackActions } = useSocialPlayer({ id: "facebook" })
+  const { playbackActions: youtubePlaybackActions } = useSocialPlayer({ id: "youtube" })
+  const { playbackActions: vimeoPlaybackActions } = useSocialPlayer({ id: "vimeo" })
+  const { playbackActions: soundcloudPlaybackActions } = useSocialPlayer({ id: "soundcloud" })
+  const { playbackActions: streamablePlaybackActions } = useSocialPlayer({ id: "streamable" })
+  const { playbackActions: twitchPlaybackActions } = useSocialPlayer({ id: "twitch" })
+  const { playbackActions: wistiaPlaybackActions } = useSocialPlayer({ id: "wistia" })
+  const { playbackActions: vidyardPlaybackActions } = useSocialPlayer({ id: "vidyard" })
+  const { playbackActions: mixcloudPlaybackActions } = useSocialPlayer({ id: "mixcloud" })
+  const { playbackActions: dailymotionPlaybackActions } = useSocialPlayer({ id: "dailymotion" })
 
-  onMount(() => {
-    // Activate when playback element is accessible from the DOM
-    activate()
-  })
+  const handleClick = (name: SocialPlayerName) => {
+    setCurrentSource(name)
+  }
 
   createEffect(() => {
-    // Plugin will inject extra action to playbackActions
-    playbackActions.load({
-      source: source(),
-    })
+    const source = sources.find((item) => item.name === currentSource())?.source as string
+
+    const handlers: Record<SocialPlayerName, () => void> = {
+      facebook: () => {
+        facebookPlaybackActions.loadFacebookUrl({
+          source,
+        })
+      },
+      youtube: () => {
+        youtubePlaybackActions.loadYoutubeUrl({ source })
+      },
+      vimeo: () => {
+        vimeoPlaybackActions.loadVimeoUrl({ source })
+      },
+      soundcloud: () => {
+        soundcloudPlaybackActions.loadSoundcloudUrl({ source })
+      },
+      streamable: () => {
+        streamablePlaybackActions.loadStreamableUrl({ source })
+      },
+      twitch: () => {
+        twitchPlaybackActions.loadTwitchUrl({ source })
+      },
+      wistia: () => {
+        wistiaPlaybackActions.loadWistiaUrl({ source })
+      },
+      vidyard: () => {
+        vidyardPlaybackActions.loadVidyardUrl({ source })
+      },
+      mixcloud: () => {
+        mixcloudPlaybackActions.loadMixcloudUrl({ source })
+      },
+      dailymotion: () => {
+        dailymotionPlaybackActions.loadDailymotionUrl({ videoId: source })
+      },
+    }
+
+    const handler = handlers[currentSource()]
+    handler()
   })
 
-  function jumpNext5s() {
-    // Core actions and state are always available
-    playbackActions.setCurrentTime(playbackState.currentTime + 5)
-  }
-
-  function jumpPrev5s() {
-    playbackActions.setCurrentTime(playbackState.currentTime - 5)
-  }
-
-  function toggleStreamSource() {
-    if (source() === source1) {
-      setSource(source2)
-    } else {
-      setSource(source1)
-    }
-  }
-
   return (
-    <div class="p-4">
-      <div class="border-emerald border-1 h-[400px] w-[600px]">
-        <video class="h-full w-full" id="video" controls></video>
+    <div class="space-y-4 p-4">
+      <div class="h-[600px] w-[600px]">
+        {currentSource() === "facebook" && (
+          <div class="h-full w-full">
+            <div class="h-full w-full" id="facebook"></div>
+          </div>
+        )}
+
+        {currentSource() === "youtube" && (
+          <div class="h-full w-full">
+            <div class="h-full w-full" id="youtube"></div>
+          </div>
+        )}
+
+        {currentSource() === "vimeo" && (
+          <div class="h-full w-full">
+            <div class="h-full w-full" id="vimeo"></div>
+          </div>
+        )}
+
+        {currentSource() === "soundcloud" && (
+          <div class="h-full w-full">
+            <div class="h-full w-full" id="soundcloud"></div>
+          </div>
+        )}
+
+        {currentSource() === "streamable" && (
+          <div class="h-full w-full">
+            <div class="h-full w-full" id="streamable"></div>
+          </div>
+        )}
+
+        {currentSource() === "twitch" && (
+          <div class="h-full w-full">
+            <div class="h-full w-full" id="twitch"></div>
+          </div>
+        )}
+
+        {currentSource() === "wistia" && (
+          <div class="h-full w-full">
+            <div class="h-full w-full" id="wistia"></div>
+          </div>
+        )}
+
+        {currentSource() === "mixcloud" && (
+          <div class="h-full w-full">
+            <div class="flex h-full w-full" id="mixcloud"></div>
+          </div>
+        )}
+
+        {currentSource() === "dailymotion" && (
+          <div class="h-full w-full">
+            <div class="flex h-full w-full" id="dailymotion"></div>
+          </div>
+        )}
+
+        {currentSource() === "vidyard" && (
+          <div class="h-full w-full">
+            <div class="flex h-full w-full items-center justify-center" id="vidyard"></div>
+          </div>
+        )}
       </div>
 
-      <CurrentTime />
-      {showDuration && <Duration />}
-      <Resolutions />
-
-      <div class="flex flex-col items-start ">
-        <button onClick={toggleStreamSource}>Switch stream</button>
-
-        <button onClick={jumpNext5s}>Next 5s</button>
-        <button onClick={jumpPrev5s}>Prev 5s</button>
-        <button
-          onClick={() => {
-            setShowDuration(!showDuration)
+      <div class="flex flex-wrap gap-2">
+        <For each={buttonNames}>
+          {(buttonName) => {
+            return (
+              <button
+                onClick={() => handleClick(buttonName)}
+                class="relative -ml-px inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10"
+              >
+                {buttonName.slice(0, 1).toUpperCase() + buttonName.slice(1)}
+              </button>
+            )
           }}
-        >
-          Toggle show duration
-        </button>
+        </For>
       </div>
     </div>
   )

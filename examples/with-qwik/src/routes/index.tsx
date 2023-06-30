@@ -91,9 +91,7 @@ const App = component$(() => {
 
   const currentSource = useSignal<SocialPlayerName>(sources[0].name)
 
-  const handleClick = $((name: string) => {
-    const foundSource = sources.find((item) => item.name === name)
-    if (!foundSource) return
+  const handleClick = $((name: SocialPlayerName) => {
     currentSource.value = name as SocialPlayerName
   })
 
