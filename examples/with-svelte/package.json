@@ -6,8 +6,17 @@
     "dev": "vite"
   },
   "dependencies": {
-    "@socialplayer/core": "latest",
-    "@socialplayer/svelte": "latest"
+    "@socialplayer/dailymotion-plugin": "latest",
+    "@socialplayer/facebook-plugin": "latest",
+    "@socialplayer/mixcloud-plugin": "latest",
+    "@socialplayer/soundcloud-plugin": "latest",
+    "@socialplayer/streamable-plugin": "latest",
+    "@socialplayer/svelte": "latest",
+    "@socialplayer/twitch-plugin": "latest",
+    "@socialplayer/vidyard-plugin": "latest",
+    "@socialplayer/vimeo-plugin": "latest",
+    "@socialplayer/wistia-plugin": "latest",
+    "@socialplayer/youtube-plugin": "latest"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^2.4.2",
