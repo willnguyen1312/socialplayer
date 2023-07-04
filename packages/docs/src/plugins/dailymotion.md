@@ -18,5 +18,5 @@ const { playbackActions } = createSocialPlayer({
   { id: "video-id" },
 })
 
-playbackActions.loadDailymotionUrl({ videoId: source })
+playbackActions.loadDailymotionUrl({ source })
 ```
