@@ -1,1 +1,1 @@
-export * from "./createPlayer"
+export * from "./createSocialPlayer"

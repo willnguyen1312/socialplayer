@@ -65,17 +65,22 @@ export default defineConfig({
       {
         text: "Core API",
         link: "/api/",
+        items: [{ text: "createSocialPlayer", link: "/api/createSocialPlayer" }],
+      },
+      {
+        text: "Plugins",
+        link: "/plugins/",
         items: [
-          { text: "createZoomImageClick", link: "/api/createZoomImageClick" },
-          { text: "createZoomImageHover", link: "/api/createZoomImageHover" },
-          { text: "createZoomImageMove", link: "/api/createZoomImageMove" },
-          { text: "createZoomImageWheel", link: "/api/createZoomImageWheel" },
-          { text: "cropImage", link: "/api/cropImage" },
-          { text: "makeCalculateZoom", link: "/api/makeCalculateZoom" },
-          {
-            text: "makeCalculatePercentage",
-            link: "/api/makeCalculatePercentage",
-          },
+          { text: "dailymotion", link: "/plugins/dailymotion" },
+          { text: "facebook", link: "/plugins/facebook" },
+          { text: "mixcloud", link: "/plugins/mixcloud" },
+          { text: "soundcloud", link: "/plugins/soundcloud" },
+          { text: "streamable", link: "/plugins/streamable" },
+          { text: "twitch", link: "/plugins/twitch" },
+          { text: "vidyard", link: "/plugins/vidyard" },
+          { text: "vimeo", link: "/plugins/vimeo" },
+          { text: "wistia", link: "/plugins/wistia" },
+          { text: "youtube", link: "/plugins/youtube" },
         ],
       },
       {

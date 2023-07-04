@@ -31,96 +31,155 @@ Simply importing the utilities you need from `@socialplayer/core` and social plu
 ```
 
 ```ts
-import { createPlayer } from "@socialplayer/core"
+import { createSocialPlayer } from "@socialplayer/core"
 import { youtubePlugin } from "@socialplayer/youtube-plugin"
-createPlayer.use(youtubePlugin)
+createSocialPlayer.use(youtubePlugin)
 
-const result = createPlayer({ id: "youtube-video" })
-result.playbackActions.loadYoutubeUrl({ source })
+const { playbackActions } = createSocialPlayer({ id: "youtube-video" })
+playbackActions.loadYoutubeUrl({ source: "youtube-video-source" })
 ```
 
 Refer to [Core API section](/api/) for more details
 
 ## Example with React Adapter
 
-Simply importing the utilities you need from `@zoom-image/react`
+Simply importing the utilities you need from `@socialplayer/react`
 
 ```tsx
+import React from "react"
+import { useSocialPlayer } from "@socialplayer/react"
+import { youtubePlugin } from "@socialplayer/youtube-plugin"
+useSocialPlayer.use(youtubePlugin)
 
+const App = () => {
+  const { playbackActions } = useSocialPlayer({ id: "youtube-video" })
+
+  React.useEffect(() => {
+    playbackActions.loadYoutubeUrl({ source: "youtube-video-source" })
+  }, [])
+
+  return <div id="youtube-video"></div>
+}
 ```
 
 Refer to [React Adapter section](/api/adapters/react) for more details
 
 ## Example with Preact Adapter
 
-Simply importing the utilities you need from `@zoom-image/preact`
+Simply importing the utilities you need from `@socialplayer/preact`
 
 ```tsx
+import { useEffect } from "preact/hooks"
+import { useSocialPlayer } from "@socialplayer/preact"
+import { youtubePlugin } from "@socialplayer/youtube-plugin"
+useSocialPlayer.use(youtubePlugin)
 
+const App = () => {
+  const { playbackActions } = useSocialPlayer({ id: "youtube-video" })
+
+  useEffect(() => {
+    playbackActions.loadYoutubeUrl({ source: "youtube-video-source" })
+  }, [])
+
+  return <div id="youtube-video"></div>
+}
 ```
 
 Refer to [Preact Adapter section](/api/adapters/preact) for more details
 
 ## Example with Qwik Adapter
 
-Simply importing the utilities you need from `@zoom-image/qwik`
+Simply importing the utilities you need from `@socialplayer/qwik`
 
 ```tsx
+import { useSocialPlayer } from "@socialplayer/qwik"
+import { youtubePlugin } from "@socialplayer/youtube-plugin"
+import { useVisibleTask$ } from "@builder.io/qwik"
 
+const App = () => {
+  const { playbackActions, use } = useSocialPlayer({ id: "youtube" })
+
+  useVisibleTask$(async () => {
+    await use(youtubePlugin)
+    playbackActions.loadYoutubeUrl({ source: "youtube-video-source" })
+  })
+
+  return <div id="youtube-video"></div>
+}
 ```
 
 Refer to [Qwik Adapter section](/api/adapters/qwik) for more details
 
 ## Example with Solid Adapter
 
-Simply importing the utilities you need from `@zoom-image/qwik`
+Simply importing the utilities you need from `@socialplayer/qwik`
 
 ```tsx
+import { useSocialPlayer } from "@socialplayer/solid"
+import { createEffect } from "solid-js"
+import { youtubePlugin } from "@socialplayer/youtube-plugin"
+useSocialPlayer.use(youtubePlugin)
 
+const App = () => {
+  const { playbackActions } = useSocialPlayer({ id: "youtube-video" })
+
+  createEffect(() => {
+    playbackActions.loadYoutubeUrl({ source: "youtube-video-source" })
+  })
+
+  return <div id="youtube-video"></div>
+}
 ```
 
 Refer to [Solid Adapter section](/api/adapters/solid) for more details
 
 ## Example with Svelte Adapter
 
-Simply importing the utilities you need from `@zoom-image/svelte`
+Simply importing the utilities you need from `@socialplayer/svelte`
 
 ```svelte
 <script lang="ts">
+  import { useSocialPlayer } from "@socialplayer/svelte"
+  import { onMount } from "svelte"
+  import { youtubePlugin } from "@socialplayer/youtube-plugin"
+  useSocialPlayer.use(youtubePlugin)
+
+  const { playbackActions } = useSocialPlayer({ id: "youtube-video" })
+
+  onMount(() => {
+    playbackActions.loadYoutubeUrl({ source: "youtube-video-source" })
+  })
 </script>
 
-<div class="imageContainer" bind:this={imageWheelContainer}>
-  <img class="image" alt="Large Pic" src="/image.webp" />
-</div>
+<div id="youtube-video" />
 ```
 
 Refer to [Svelte Adapter section](/api/adapters/svelte) for more details
 
 ## Example with Vue Adapter
 
-Simply importing the utilities you need from `@zoom-image/vue`
+Simply importing the utilities you need from `@socialplayer/vue`
 
 ```vue
 <script lang="ts" setup>
 import { onMounted } from "vue"
-import { useZoomImageWheel } from "@zoom-image/vue"
+import { useSocialPlayer } from "@socialplayer/vue"
+import { youtubePlugin } from "@socialplayer/youtube-plugin"
+useSocialPlayer.use(youtubePlugin)
 
-const imageWheelContainerRef = ref<HTMLDivElement>()
-const { createZoomImage } = useZoomImageWheel()
+const { playbackActions } = useSocialPlayer({ id: "youtube-video" })
 
 onMounted(() => {
-  createZoomImage(imageWheelContainerRef.value)
+  playbackActions.loadYoutubeUrl({ source: "youtube-video-source" })
 })
 </script>
 
 <template>
-  <div class="imageContainer" ref="imageWheelContainerRef">
-    <img class="image" alt="Large Pic" src="/image.webp" />
-  </div>
+  <div id="youtube-video" />
 </template>
 ```
 
-Refer to [Svelte Adapter section](/api/adapters/vue) for more details
+Refer to [Vue Adapter section](/api/adapters/vue) for more details
 
 ## Demos
 

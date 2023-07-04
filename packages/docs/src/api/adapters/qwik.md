@@ -2,44 +2,20 @@
 import BundleSize from '../../components/BundleSize.vue'
 </script>
 
-# Zoom Image Qwik
+# Headless playback Qwik
 
-The @zoom-image/qwik adapter is a wrapper around the core zoom image logic.
+The @socialplayer/qwik adapter is a wrapper around the core API.
 
-## `useZoomImageWheel` - <BundleSize func="useZoomImageWheel" pkg="@zoom-image/qwik" />
+## `useSocialPlayer` - <BundleSize func="useSocialPlayer" pkg="@socialplayer/qwik" />
 
-```ts
-function useZoomImageWheel(): {
-  createZoomImage
-  zoomImageState
-  setZoomImageState
-}
-```
-
-## `useZoomImageHover` - <BundleSize func="useZoomImageHover" pkg="@zoom-image/qwik" />
+### Basic Usage
 
 ```ts
-function useZoomImageHover(): {
-  createZoomImage
-  zoomImageState
-  setZoomImageState
-}
-```
+import { useSocialPlayer } from "@socialplayer/qwik"
 
-## `useZoomImageMove` - <BundleSize func="useZoomImageMove" pkg="@zoom-image/qwik" />
+const { playbackActions, use } = useSocialPlayer({
+  id: "video-id",
+})
 
-```ts
-function useZoomImageMove(): {
-  createZoomImage
-  zoomImageState
-}
-```
-
-## `useZoomImageClick` - <BundleSize func="useZoomImageClick" pkg="@zoom-image/qwik" />
-
-```ts
-function useZoomImageClick(): {
-  createZoomImage
-  zoomImageState
-}
+await use(plugin)
 ```

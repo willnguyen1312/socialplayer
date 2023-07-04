@@ -2,44 +2,19 @@
 import BundleSize from '../../components/BundleSize.vue'
 </script>
 
-# Zoom Image Solid
+# Headless playback Solid
 
-The @zoom-image/solid adapter is a wrapper around the core zoom image logic.
+The @socialplayer/solid adapter is a wrapper around the core API.
 
-## `useZoomImageWheel` - <BundleSize func="useZoomImageWheel" pkg="@zoom-image/solid" />
+## `useSocialPlayer` - <BundleSize func="useSocialPlayer" pkg="@socialplayer/solid" />
 
-```ts
-function useZoomImageWheel(): {
-  createZoomImage
-  zoomImageState
-  setZoomImageState
-}
-```
-
-## `useZoomImageHover` - <BundleSize func="useZoomImageHover" pkg="@zoom-image/solid" />
+### Basic Usage
 
 ```ts
-function useZoomImageHover(): {
-  createZoomImage
-  zoomImageState
-  setZoomImageState
-}
-```
+import { useSocialPlayer } from "@socialplayer/solid"
+useSocialPlayer.use(plugin)
 
-## `useZoomImageMove` - <BundleSize func="useZoomImageMove" pkg="@zoom-image/solid" />
-
-```ts
-function useZoomImageMove(): {
-  createZoomImage
-  zoomImageState
-}
-```
-
-## `useZoomImageClick` - <BundleSize func="useZoomImageClick" pkg="@zoom-image/solid" />
-
-```ts
-function useZoomImageClick(): {
-  createZoomImage
-  zoomImageState
-}
+const { playbackActions } = useSocialPlayer({
+  id: "video-id",
+})
 ```

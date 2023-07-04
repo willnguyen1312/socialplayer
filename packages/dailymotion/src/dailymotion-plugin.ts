@@ -13,7 +13,7 @@ declare module "@socialplayer/core" {
 declare global {
   interface Window {
     dailymotion: {
-      createPlayer: any
+      createSocialPlayer: any
     }
   }
 }
@@ -28,7 +28,7 @@ export const dailymotionPlugin: Plugin<DailymotionPluginConfig> = {
     const loadDailymotionUrl: any = async ({ id, videoId }: { id: string; videoId: string }) => {
       await loadScript(`https://geo.dailymotion.com/libs/player/${config.playerId}.js`)
 
-      window.dailymotion.createPlayer(id, {
+      window.dailymotion.createSocialPlayer(id, {
         video: videoId,
       })
     }

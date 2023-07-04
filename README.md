@@ -29,7 +29,7 @@ A simple yet complete playback library designed for UI frameworks or even withou
 - ✅ Implement core logic
 - ✅ Implement framework adapters
 - ✅ Implement some common use plugins such as data streaming
-- [] Write documentation
+- ✅ Write documentation
 
 ## Supported framework adapters
 
@@ -57,10 +57,8 @@ A simple yet complete playback library designed for UI frameworks or even withou
 
 - [Tanstack](https://tanstack.com) - A collection of high-quality open source libraries for web developers
 - [Zag](https://zagjs.com) - A collection of framework-agnostic UI component patterns
-- [Day.js](https://day.js.org/docs/en/plugin/plugin) - A modern JavaScript date utility library
-- [VueUse](https://vueuse.org) - Collection of Essential Vue Composition Utilities
-- [Radix UI](https://www.radix-ui.com) - A collection of open source UI components
-- [Building a modern design system in layers](https://blog.almaer.com/building-a-modern-design-system-in-layers/?ck_subscriber_id=1238259209)
+- [React-player](https://github.com/cookpete/react-player) - A React component for playing a variety of URLs, including
+  file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia and DailyMotion
 - [UI frameworks and Media Elements 🎧](https://medium.com/axon-enterprise/ui-frameworks-and-media-elements-c0c6832528e5)
 
 ## Sponsor

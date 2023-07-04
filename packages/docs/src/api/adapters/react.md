@@ -2,44 +2,19 @@
 import BundleSize from '../../components/BundleSize.vue'
 </script>
 
-# Zoom Image React
+# Headless playback React
 
-The @zoom-image/react adapter is a wrapper around the core zoom image logic.
+The @socialplayer/react adapter is a wrapper around the core API.
 
-## `useZoomImageWheel` - <BundleSize func="useZoomImageWheel" pkg="@zoom-image/react" />
+## `useSocialPlayer` - <BundleSize func="useSocialPlayer" pkg="@socialplayer/react" />
 
-```ts
-function useZoomImageWheel(): {
-  createZoomImage
-  zoomImageState
-  setZoomImageState
-}
-```
-
-## `useZoomImageHover` - <BundleSize func="useZoomImageHover" pkg="@zoom-image/react" />
+### Basic Usage
 
 ```ts
-function useZoomImageHover(): {
-  createZoomImage
-  zoomImageState
-  setZoomImageState
-}
-```
+import { useSocialPlayer } from "@socialplayer/react"
+useSocialPlayer.use(plugin)
 
-## `useZoomImageMove` - <BundleSize func="useZoomImageMove" pkg="@zoom-image/react" />
-
-```ts
-function useZoomImageMove(): {
-  createZoomImage
-  zoomImageState
-}
-```
-
-## `useZoomImageClick` - <BundleSize func="useZoomImageClick" pkg="@zoom-image/react" />
-
-```ts
-function useZoomImageClick(): {
-  createZoomImage
-  zoomImageState
-}
+const { playbackActions } = useSocialPlayer({
+  id: "video-id",
+})
 ```
