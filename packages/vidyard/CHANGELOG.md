@@ -1,5 +1,13 @@
 # @socialplayer/vidyard-plugin
 
+## 0.1.2
+
+### Patch Changes
+
+- Updated dependencies
+  [[`a55ca6a`](https://github.com/willnguyen1312/socialplayer/commit/a55ca6a346424299ae2e361f2d8106cfa763cc51)]:
+  - @socialplayer/core@0.2.0
+
 ## 0.1.1
 
 ### Patch Changes
