@@ -19,7 +19,7 @@ features:
   - title: Plugins ⚙︎
     details: The core library is extensible with plugins
   - title: Performance 🚀
-    details: The bundle size is small < 0.5KB
+    details: The bundle size is small < 1KB
 ---
 
 <script setup>

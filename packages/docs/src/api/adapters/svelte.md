@@ -2,44 +2,17 @@
 import BundleSize from '../../components/BundleSize.vue'
 </script>
 
-# Zoom Image Svelte
+# Headless playback Svelte
 
-The @zoom-image/svelte adapter is a wrapper around the core zoom image logic.
+The @socialplayer/svelte adapter is a wrapper around the core API.
 
-## `useZoomImageWheel` - <BundleSize func="useZoomImageWheel" pkg="@zoom-image/svelte" />
+## `useSocialPlayer` - <BundleSize func="useSocialPlayer" pkg="@socialplayer/svelte" />
 
-```ts
-function useZoomImageWheel(): {
-  createZoomImage
-  zoomImageState
-  setZoomImageState
-}
-```
-
-## `useZoomImageHover` - <BundleSize func="useZoomImageHover" pkg="@zoom-image/svelte" />
+### Basic Usage
 
 ```ts
-function useZoomImageHover(): {
-  createZoomImage
-  zoomImageState
-  setZoomImageState
-}
-```
-
-## `useZoomImageMove` - <BundleSize func="useZoomImageMove" pkg="@zoom-image/svelte" />
-
-```ts
-function useZoomImageMove(): {
-  createZoomImage
-  zoomImageState
-}
-```
-
-## `useZoomImageClick` - <BundleSize func="useZoomImageClick" pkg="@zoom-image/svelte" />
-
-```ts
-function useZoomImageClick(): {
-  createZoomImage
-  zoomImageState
-}
+useSocialPlayer.use(plugin)
+const { playbackActions } = useSocialPlayer({
+  id: "video-id",
+})
 ```

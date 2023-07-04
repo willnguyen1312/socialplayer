@@ -65,17 +65,15 @@ export default defineConfig({
       {
         text: "Core API",
         link: "/api/",
+        items: [{ text: "createSocialPlayer", link: "/api/createSocialPlayer" }],
+      },
+      {
+        text: "Core Plugins",
+        link: "/plugins/",
         items: [
-          { text: "createZoomImageClick", link: "/api/createZoomImageClick" },
-          { text: "createZoomImageHover", link: "/api/createZoomImageHover" },
-          { text: "createZoomImageMove", link: "/api/createZoomImageMove" },
-          { text: "createZoomImageWheel", link: "/api/createZoomImageWheel" },
-          { text: "cropImage", link: "/api/cropImage" },
-          { text: "makeCalculateZoom", link: "/api/makeCalculateZoom" },
-          {
-            text: "makeCalculatePercentage",
-            link: "/api/makeCalculatePercentage",
-          },
+          { text: "dash", link: "/plugins/dash" },
+          { text: "hijack", link: "/plugins/hijack" },
+          { text: "hls", link: "/plugins/hls" },
         ],
       },
       {

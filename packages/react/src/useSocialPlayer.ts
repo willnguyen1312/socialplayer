@@ -1,20 +1,20 @@
-import { PluginFunc, SocialPlayerActions, createPlayer } from "@socialplayer/core"
+import { PluginFunc, SocialPlayerActions, createSocialPlayer } from "@socialplayer/core"
 import { useRef } from "react"
 
-type CreatePlayer = typeof createPlayer
+type CreateSocialPlayer = typeof createSocialPlayer
 
 type useSocialPlayerFunc = {
-  (arg: Parameters<CreatePlayer>[0]): {
+  (arg: Parameters<CreateSocialPlayer>[0]): {
     playbackActions: SocialPlayerActions
   }
   use: PluginFunc
 }
 
 export const useSocialPlayer: useSocialPlayerFunc = (arg) => {
-  const playbackInstanceRef = useRef<ReturnType<CreatePlayer>>()
+  const playbackInstanceRef = useRef<ReturnType<CreateSocialPlayer>>()
 
   if (!playbackInstanceRef.current) {
-    playbackInstanceRef.current = createPlayer(arg)
+    playbackInstanceRef.current = createSocialPlayer(arg)
   }
 
   return {
@@ -23,4 +23,4 @@ export const useSocialPlayer: useSocialPlayerFunc = (arg) => {
   }
 }
 
-useSocialPlayer.use = createPlayer.use
+useSocialPlayer.use = createSocialPlayer.use

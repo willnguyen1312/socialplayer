@@ -16,7 +16,7 @@ export type Plugin<T = unknown> = {
 
 export type PluginFunc = <T>(plugin: Plugin<T>, ...options: T[]) => void
 
-type CreatePlayerFunc = {
+type CreateSocialPlayerFunc = {
   (arg: { id: string }): {
     playbackActions: CustomSocialPlayerActions
     use: PluginFunc
@@ -25,7 +25,7 @@ type CreatePlayerFunc = {
   $pluginsQueue: (() => CustomSocialPlayerActions)[]
 }
 
-export const createPlayer: CreatePlayerFunc = ({ id }) => {
+export const createSocialPlayer: CreateSocialPlayerFunc = ({ id }) => {
   const processActions = (actions: any) => {
     for (const key in actions) {
       const originalAction = actions[key]
@@ -49,7 +49,7 @@ export const createPlayer: CreatePlayerFunc = ({ id }) => {
     },
   }
 
-  for (const pluginQueueItem of createPlayer.$pluginsQueue) {
+  for (const pluginQueueItem of createSocialPlayer.$pluginsQueue) {
     const actions = pluginQueueItem()
     processActions(actions)
     Object.assign(result.playbackActions, actions)
@@ -58,9 +58,9 @@ export const createPlayer: CreatePlayerFunc = ({ id }) => {
   return result
 }
 
-createPlayer.$pluginsQueue = []
-createPlayer.use = <T>(plugin: Plugin<T>, options: T) => {
-  createPlayer.$pluginsQueue.push(() => {
+createSocialPlayer.$pluginsQueue = []
+createSocialPlayer.use = <T>(plugin: Plugin<T>, options: T) => {
+  createSocialPlayer.$pluginsQueue.push(() => {
     return plugin.install({}, options)
   })
 }

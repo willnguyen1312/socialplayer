@@ -1,6 +1,6 @@
 {
   "@socialplayer/core": {
-    "createPlayer": "195 B"
+    "createSocialPlayer": "194 B"
   },
   "@socialplayer/dailymotion-plugin": {
     "dailymotionPlugin": "271 B"
@@ -12,7 +12,7 @@
     "mixcloudPlugin": "324 B"
   },
   "@socialplayer/preact": {
-    "useSocialPlayer": "921 B"
+    "useSocialPlayer": "914 B"
   },
   "@socialplayer/qwik": {
     "useSocialPlayer": "336 B"
@@ -21,7 +21,7 @@
     "useSocialPlayer": "248 B"
   },
   "@socialplayer/solid": {
-    "useSocialPlayer": "218 B"
+    "useSocialPlayer": "215 B"
   },
   "@socialplayer/soundcloud-plugin": {
     "soundcloudPlugin": "294 B"
@@ -30,7 +30,7 @@
     "streamablePlugin": "290 B"
   },
   "@socialplayer/svelte": {
-    "useSocialPlayer": "218 B"
+    "useSocialPlayer": "215 B"
   },
   "@socialplayer/twitch-plugin": {
     "twitchPlugin": "317 B"
@@ -42,7 +42,7 @@
     "vimeoPlugin": "297 B"
   },
   "@socialplayer/vue": {
-    "useSocialPlayer": "218 B"
+    "useSocialPlayer": "215 B"
   },
   "@socialplayer/wistia-plugin": {
     "wistiaPlugin": "312 B"

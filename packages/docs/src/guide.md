@@ -31,11 +31,11 @@ Simply importing the utilities you need from `@socialplayer/core` and social plu
 ```
 
 ```ts
-import { createPlayer } from "@socialplayer/core"
+import { createSocialPlayer } from "@socialplayer/core"
 import { youtubePlugin } from "@socialplayer/youtube-plugin"
-createPlayer.use(youtubePlugin)
+createSocialPlayer.use(youtubePlugin)
 
-const { playbackActions } = createPlayer({ id: "youtube-video" })
+const { playbackActions } = createSocialPlayer({ id: "youtube-video" })
 playbackActions.loadYoutubeUrl({ source: "youtube-video-source" })
 ```
 

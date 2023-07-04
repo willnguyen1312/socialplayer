@@ -1,7 +1,7 @@
 import "@unocss/reset/tailwind.css"
 import "virtual:uno.css"
 
-import { createPlayer } from "@socialplayer/core"
+import { createSocialPlayer } from "@socialplayer/core"
 import { dailymotionPlugin } from "@socialplayer/dailymotion-plugin"
 import { facebookPlugin } from "@socialplayer/facebook-plugin"
 import { mixcloudPlugin } from "@socialplayer/mixcloud-plugin"
@@ -13,21 +13,21 @@ import { vimeoPlugin } from "@socialplayer/vimeo-plugin"
 import { wistiaPlugin } from "@socialplayer/wistia-plugin"
 import { youtubePlugin } from "@socialplayer/youtube-plugin"
 
-createPlayer.use(facebookPlugin, {
+createSocialPlayer.use(facebookPlugin, {
   appId: "1309697205772819",
 })
-createPlayer.use(youtubePlugin)
-createPlayer.use(soundcloudPlugin)
-createPlayer.use(vimeoPlugin)
-createPlayer.use(streamablePlugin)
-createPlayer.use(wistiaPlugin)
-createPlayer.use(twitchPlugin)
-createPlayer.use(vidyardPlugin)
-createPlayer.use(mixcloudPlugin)
-createPlayer.use(dailymotionPlugin, { playerId: "xfpfw" })
+createSocialPlayer.use(youtubePlugin)
+createSocialPlayer.use(soundcloudPlugin)
+createSocialPlayer.use(vimeoPlugin)
+createSocialPlayer.use(streamablePlugin)
+createSocialPlayer.use(wistiaPlugin)
+createSocialPlayer.use(twitchPlugin)
+createSocialPlayer.use(vidyardPlugin)
+createSocialPlayer.use(mixcloudPlugin)
+createSocialPlayer.use(dailymotionPlugin, { playerId: "xfpfw" })
 
 const id = "video"
-const result = createPlayer({ id })
+const result = createSocialPlayer({ id })
 
 const getTemplate = (id: string) => {
   const template = document.getElementById(id) as HTMLTemplateElement
