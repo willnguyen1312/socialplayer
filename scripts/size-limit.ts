@@ -3,20 +3,22 @@ import fs from "fs/promises"
 
 const packages = [
   "core",
-  "dailymotion",
-  "facebook",
-  "mixcloud",
   "preact",
   "qwik",
   "react",
   "solid",
+  "svelte",
+  "vue",
+
+  // plugins
+  "dailymotion",
+  "facebook",
+  "mixcloud",
   "soundcloud",
   "streamable",
-  "svelte",
   "twitch",
   "vidyard",
   "vimeo",
-  "vue",
   "wistia",
   "youtube",
 ]
