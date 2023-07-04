@@ -1,5 +1,13 @@
 # @socialplayer/core
 
+## 0.2.0
+
+### Minor Changes
+
+- [#40](https://github.com/willnguyen1312/socialplayer/pull/40)
+  [`a55ca6a`](https://github.com/willnguyen1312/socialplayer/commit/a55ca6a346424299ae2e361f2d8106cfa763cc51) Thanks
+  [@willnguyen1312](https://github.com/willnguyen1312)! - Pump minor version for core API 💞
+
 ## 0.1.1
 
 ### Patch Changes

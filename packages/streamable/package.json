@@ -1,6 +1,6 @@
 {
   "name": "@socialplayer/streamable-plugin",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A Streamable implementation of socialplayer",
   "author": "Nam Nguyen <nam.nguyen.node@gmail.com>",
   "repository": "willnguyen1312/socialplayer",
