@@ -11,6 +11,8 @@ The @socialplayer/qwik adapter is a wrapper around the core API.
 ### Basic Usage
 
 ```ts
+import { useSocialPlayer } from "@socialplayer/qwik"
+
 const { playbackActions, use } = useSocialPlayer({
   id: "video-id",
 })

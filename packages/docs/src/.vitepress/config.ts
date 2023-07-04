@@ -68,12 +68,19 @@ export default defineConfig({
         items: [{ text: "createSocialPlayer", link: "/api/createSocialPlayer" }],
       },
       {
-        text: "Core Plugins",
+        text: "Plugins",
         link: "/plugins/",
         items: [
-          { text: "dash", link: "/plugins/dash" },
-          { text: "hijack", link: "/plugins/hijack" },
-          { text: "hls", link: "/plugins/hls" },
+          { text: "dailymotion", link: "/plugins/dailymotion" },
+          { text: "facebook", link: "/plugins/facebook" },
+          { text: "mixcloud", link: "/plugins/mixcloud" },
+          { text: "soundcloud", link: "/plugins/soundcloud" },
+          { text: "streamable", link: "/plugins/streamable" },
+          { text: "twitch", link: "/plugins/twitch" },
+          { text: "vidyard", link: "/plugins/vidyard" },
+          { text: "vimeo", link: "/plugins/vimeo" },
+          { text: "wistia", link: "/plugins/wistia" },
+          { text: "youtube", link: "/plugins/youtube" },
         ],
       },
       {

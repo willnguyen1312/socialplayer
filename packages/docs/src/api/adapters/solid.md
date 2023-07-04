@@ -11,7 +11,9 @@ The @socialplayer/solid adapter is a wrapper around the core API.
 ### Basic Usage
 
 ```ts
+import { useSocialPlayer } from "@socialplayer/solid"
 useSocialPlayer.use(plugin)
+
 const { playbackActions } = useSocialPlayer({
   id: "video-id",
 })

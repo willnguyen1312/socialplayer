@@ -7,7 +7,9 @@ import BundleSize from '../components/BundleSize.vue'
 ### Basic Usage
 
 ```ts
+import { createSocialPlayer } from "@socialplayer/core"
 createSocialPlayer.use(plugin)
+
 const { playbackActions } = createSocialPlayer({
   id: "video-id",
 })

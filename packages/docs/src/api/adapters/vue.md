@@ -11,7 +11,9 @@ The @socialplayer/vue adapter is a wrapper around the core API.
 ### Basic Usage
 
 ```ts
+import { useSocialPlayer } from "@socialplayer/vue"
 useSocialPlayer.use(plugin)
+
 const { playbackActions } = useSocialPlayer({
   id: "video-id",
 })
