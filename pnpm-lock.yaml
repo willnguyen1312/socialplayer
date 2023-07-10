@@ -504,6 +504,9 @@ importers:
 
   packages/docs:
     dependencies:
+      "@socialplayer/core":
+        specifier: latest
+        version: link:../core
       "@socialplayer/dailymotion-plugin":
         specifier: latest
         version: link:../dailymotion
