@@ -37,8 +37,8 @@
     "@socialplayer/vue": "latest",
     "@socialplayer/wistia-plugin": "latest",
     "@socialplayer/youtube-plugin": "latest",
-    "@unocss/reset": "^0.53.4",
-    "vitepress": "1.0.0-beta.3",
+    "@unocss/reset": "^0.54.1",
+    "vitepress": "1.0.0-beta.7",
     "vue": "^3.3.4"
   }
 }
