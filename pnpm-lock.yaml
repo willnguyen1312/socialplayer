@@ -544,8 +544,8 @@ importers:
         specifier: ^0.54.2
         version: 0.54.2
       vitepress:
-        specifier: 1.0.0-rc.1
-        version: 1.0.0-rc.1(@algolia/client-search@4.18.0)(search-insights@2.6.0)
+        specifier: 1.0.0-beta.7
+        version: 1.0.0-beta.7(@algolia/client-search@4.18.0)(search-insights@2.6.0)
       vue:
         specifier: ^3.3.4
         version: 3.3.4
@@ -8668,9 +8668,9 @@ packages:
       vite: 4.4.9(@types/node@20.4.8)
     dev: true
 
-  /vitepress@1.0.0-rc.1(@algolia/client-search@4.18.0)(search-insights@2.6.0):
+  /vitepress@1.0.0-beta.7(@algolia/client-search@4.18.0)(search-insights@2.6.0):
     resolution:
-      { integrity: sha512-WLZ9StXb6kGMaq0/8oWnNcgg+siMBmlorl1eh937kKuNSVqelEqHLN6GV+HjtXzaSzV8xBrX04DG3VCgbhZwPA== }
+      { integrity: sha512-P9Rw+FXatKIU4fVdtKxqwHl6fby8E/8zE3FIfep6meNgN4BxbWqoKJ6yfuuQQR9IrpQqwnyaBh4LSabyll6tWg== }
     hasBin: true
     dependencies:
       "@docsearch/css": 3.5.1
