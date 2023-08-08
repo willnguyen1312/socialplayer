@@ -1,5 +1,13 @@
 # @socialplayer/preact
 
+## 0.1.4
+
+### Patch Changes
+
+- Updated dependencies
+  [[`89787c6`](https://github.com/willnguyen1312/socialplayer/commit/89787c62956035c9f6a826cba6aaeb438ff5113b)]:
+  - @socialplayer/core@0.3.0
+
 ## 0.1.3
 
 ### Patch Changes

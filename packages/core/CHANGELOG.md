@@ -1,5 +1,13 @@
 # @socialplayer/core
 
+## 0.3.0
+
+### Minor Changes
+
+- [#51](https://github.com/willnguyen1312/socialplayer/pull/51)
+  [`89787c6`](https://github.com/willnguyen1312/socialplayer/commit/89787c62956035c9f6a826cba6aaeb438ff5113b) Thanks
+  [@willnguyen1312](https://github.com/willnguyen1312)! - Minor bump core package 🚀
+
 ## 0.2.0
 
 ### Minor Changes
