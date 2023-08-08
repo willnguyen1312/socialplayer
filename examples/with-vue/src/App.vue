@@ -57,7 +57,7 @@ const sources: SourceItem[] = [
   },
   {
     name: "soundcloud",
-    source: "https://soundcloud.com/kainalu-woodhall/see-you-again-tyler-the-creator",
+    source: "https://soundcloud.com/ahmed-gado-1/im-coming-home-skylar-grey",
   },
   {
     name: "streamable",
@@ -153,42 +153,42 @@ watchEffect(
 <template>
   <div class="space-y-4 p-4">
     <div class="h-[600px] w-[600px]">
-      <div class="h-full w-full" v-show="currentSocialPlayerName === 'facebook'">
+      <div class="h-full w-full" v-if="currentSocialPlayerName === 'facebook'">
         <div class="h-full w-full" id="facebook"></div>
       </div>
-      <div class="h-full w-full" v-show="currentSocialPlayerName === 'youtube'">
+      <div class="h-full w-full" v-if="currentSocialPlayerName === 'youtube'">
         <div class="h-full w-full" id="youtube"></div>
       </div>
 
-      <div class="h-full w-full" v-show="currentSocialPlayerName === 'vimeo'">
+      <div class="h-full w-full" v-if="currentSocialPlayerName === 'vimeo'">
         <div class="h-full w-full" id="vimeo"></div>
       </div>
 
-      <div class="h-full w-full" v-show="currentSocialPlayerName === 'soundcloud'">
+      <div class="h-full w-full" v-if="currentSocialPlayerName === 'soundcloud'">
         <div class="h-full w-full" id="soundcloud"></div>
       </div>
 
-      <div class="h-full w-full" v-show="currentSocialPlayerName === 'streamable'">
+      <div class="h-full w-full" v-if="currentSocialPlayerName === 'streamable'">
         <div class="h-full w-full" id="streamable"></div>
       </div>
 
-      <div class="h-full w-full" v-show="currentSocialPlayerName === 'twitch'">
+      <div class="h-full w-full" v-if="currentSocialPlayerName === 'twitch'">
         <div class="h-full w-full" id="twitch"></div>
       </div>
 
-      <div class="h-full w-full" v-show="currentSocialPlayerName === 'wistia'">
+      <div class="h-full w-full" v-if="currentSocialPlayerName === 'wistia'">
         <div class="h-full w-full" id="wistia"></div>
       </div>
 
-      <div class="h-full w-full" v-show="currentSocialPlayerName === 'mixcloud'">
+      <div class="h-full w-full" v-if="currentSocialPlayerName === 'mixcloud'">
         <div class="flex h-full w-full" id="mixcloud"></div>
       </div>
 
-      <div class="h-full w-full" v-show="currentSocialPlayerName === 'dailymotion'">
+      <div class="h-full w-full" v-if="currentSocialPlayerName === 'dailymotion'">
         <div class="flex h-full w-full" id="dailymotion"></div>
       </div>
 
-      <div class="h-full w-full" v-show="currentSocialPlayerName === 'vidyard'">
+      <div class="h-full w-full" v-if="currentSocialPlayerName === 'vidyard'">
         <div class="flex h-full w-full items-center justify-center" id="vidyard"></div>
       </div>
     </div>
