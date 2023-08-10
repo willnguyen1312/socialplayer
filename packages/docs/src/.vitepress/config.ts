@@ -37,6 +37,10 @@ export default defineConfig({
             link: "/examples/vanilla",
           },
           {
+            text: "Angular",
+            link: "/examples/angular",
+          },
+          {
             text: "Vue",
             link: "/examples/vue",
           },
