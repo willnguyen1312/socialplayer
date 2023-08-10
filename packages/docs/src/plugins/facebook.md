@@ -10,8 +10,6 @@ import BundleSize from '../components/BundleSize.vue'
 import { facebookPlugin } from "@socialplayer/facebook-plugin"
 import { createSocialPlayer } from "@socialplayer/core"
 
-// Please refer to the Facebook doc for more information on appId
-// https://developers.facebook.com/docs/development/create-an-app/
 createSocialPlayer.use(facebookPlugin, {
   appId: "appId",
 })

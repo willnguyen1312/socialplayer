@@ -9,6 +9,7 @@ const packages = [
   "solid",
   "svelte",
   "vue",
+  "angular/dist/angular",
 
   // plugins
   "dailymotion",
