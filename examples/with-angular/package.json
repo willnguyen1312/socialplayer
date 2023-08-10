@@ -14,7 +14,7 @@
     "@angular/platform-browser-dynamic": "^16.2.0",
     "@angular/platform-browser": "^16.2.0",
     "@angular/router": "^16.2.0",
-    "@socialplayer/angular": "../../packages/angular/dist/angular",
+    "@socialplayer/angular": "latest",
     "@socialplayer/dailymotion-plugin": "latest",
     "@socialplayer/facebook-plugin": "latest",
     "@socialplayer/mixcloud-plugin": "latest",
