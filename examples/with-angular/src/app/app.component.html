@@ -1,0 +1,52 @@
+<div class="space-y-4 p-4">
+  <div class="h-[600px] w-[600px]">
+    <div class="h-full w-full" *ngIf="currentSocialPlayerName === 'facebook'">
+      <div class="h-full w-full" id="facebook"></div>
+    </div>
+    <div class="h-full w-full" *ngIf="currentSocialPlayerName === 'youtube'">
+      <div class="h-full w-full" id="youtube"></div>
+    </div>
+
+    <div class="h-full w-full" *ngIf="currentSocialPlayerName === 'vimeo'">
+      <div class="h-full w-full" id="vimeo"></div>
+    </div>
+
+    <div class="h-full w-full" *ngIf="currentSocialPlayerName === 'soundcloud'">
+      <div class="h-full w-full" id="soundcloud"></div>
+    </div>
+
+    <div class="h-full w-full" *ngIf="currentSocialPlayerName === 'streamable'">
+      <div class="h-full w-full" id="streamable"></div>
+    </div>
+
+    <div class="h-full w-full" *ngIf="currentSocialPlayerName === 'twitch'">
+      <div class="h-full w-full" id="twitch"></div>
+    </div>
+
+    <div class="h-full w-full" *ngIf="currentSocialPlayerName === 'wistia'">
+      <div class="h-full w-full" id="wistia"></div>
+    </div>
+
+    <div class="h-full w-full" *ngIf="currentSocialPlayerName === 'mixcloud'">
+      <div class="flex h-full w-full" id="mixcloud"></div>
+    </div>
+
+    <div class="h-full w-full" *ngIf="currentSocialPlayerName === 'dailymotion'">
+      <div class="flex h-full w-full" id="dailymotion"></div>
+    </div>
+
+    <div class="h-full w-full" *ngIf="currentSocialPlayerName === 'vidyard'">
+      <div class="flex h-full w-full items-center justify-center" id="vidyard"></div>
+    </div>
+  </div>
+
+  <div class="flex flex-wrap gap-2">
+    <button
+      class="relative -ml-px inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10"
+      *ngFor="let name of buttonNames"
+      (click)="handleButtonClick(name)"
+    >
+      {{ name.slice(0, 1).toUpperCase() + name.slice(1) }}
+    </button>
+  </div>
+</div>

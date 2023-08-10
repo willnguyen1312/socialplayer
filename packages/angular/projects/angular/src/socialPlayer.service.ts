@@ -2,14 +2,14 @@ import { Injectable } from "@angular/core"
 import { createSocialPlayer } from "@socialplayer/core"
 
 @Injectable()
-export class ZoomImageClickService {
+export class SocialPlayerService {
   static use = createSocialPlayer.use
 
-  private playbackInstance?: ReturnType<typeof createSocialPlayer>
+  private playbackInstanceLookup = new Map<string, ReturnType<typeof createSocialPlayer>>()
 
   createSocialPlayer = (arg: Parameters<typeof createSocialPlayer>[0]) => {
-    this.playbackInstance = this.playbackInstance ?? createSocialPlayer(arg)
-
-    return this.createSocialPlayer
+    const playbackInstance = this.playbackInstanceLookup.get(arg.id) ?? createSocialPlayer(arg)
+    this.playbackInstanceLookup.set(arg.id, playbackInstance)
+    return playbackInstance
   }
 }
