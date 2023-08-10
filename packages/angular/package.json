@@ -1,6 +1,6 @@
 {
   "name": "@socialplayer/angular",
-  "version": "0.2.0",
+  "version": "0.1.0",
   "scripts": {
     "build": "ng build angular --configuration development",
     "dev": "ng build angular --watch --configuration development"
