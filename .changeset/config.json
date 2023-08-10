@@ -21,7 +21,6 @@
     "with-solid",
     "with-svelte",
     "with-qwik",
-    "with-angular",
-    "angular"
+    "with-angular"
   ]
 }
