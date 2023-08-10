@@ -36,7 +36,7 @@
     "postbuild": "pnpm run size --concurrency 20",
     "react": "pnpm --filter=@socialplayer/react --concurrency 20",
     "release": "pnpm check && changeset version && changeset publish",
-    "size": "esno scripts/size-limit.ts",
+    "size": "esno scripts/size.ts",
     "start-docs": "turbo dev --filter=docs... --concurrency 20",
     "start-preact": "turbo dev --filter=with-preact... --concurrency 20",
     "start-angular": "turbo dev --filter=with-angular... --concurrency 20",

@@ -20,6 +20,9 @@
   "@socialplayer/vue": {
     "useSocialPlayer": "215 B"
   },
+  "@socialplayer/angular-plugin": {
+    "SocialPlayerService": "436 B"
+  },
   "@socialplayer/dailymotion-plugin": {
     "dailymotionPlugin": "268 B"
   },
