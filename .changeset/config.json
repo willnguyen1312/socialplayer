@@ -13,14 +13,15 @@
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
   "ignore": [
+    "angular",
     "docs",
+    "with-vanilla",
+    "with-angular",
     "with-vue",
     "with-react",
-    "with-vanilla",
-    "with-preact",
     "with-solid",
     "with-svelte",
-    "with-qwik",
-    "with-angular"
+    "with-preact",
+    "with-qwik"
   ]
 }
