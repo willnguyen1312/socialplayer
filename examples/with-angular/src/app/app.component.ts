@@ -1,5 +1,5 @@
 import { AfterViewInit, Component } from "@angular/core"
-import { SocialPlayerService } from "@socialplayer/angular-plugin"
+import { SocialPlayerService } from "@socialplayer/angular"
 import { dailymotionPlugin } from "@socialplayer/dailymotion-plugin"
 import { facebookPlugin } from "@socialplayer/facebook-plugin"
 import { mixcloudPlugin } from "@socialplayer/mixcloud-plugin"
