@@ -565,6 +565,7 @@ importers:
       typescript:
         specifier: ~5.1.6
         version: 5.1.6
+    publishDirectory: ./dist/angular
 
   packages/core:
     devDependencies:
