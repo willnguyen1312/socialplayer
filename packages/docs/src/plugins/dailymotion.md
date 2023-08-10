@@ -10,8 +10,6 @@ import BundleSize from '../components/BundleSize.vue'
 import { dailymotionPlugin } from "@socialplayer/dailymotion-plugin"
 import { createSocialPlayer } from "@socialplayer/core"
 
-// Please refer to the Dailymotion doc for more information on playerId
-// https://developers.dailymotion.com/player/#player-library-script
 createSocialPlayer.use(dailymotionPlugin, { playerId: "playerId" })
 
 const { playbackActions } = createSocialPlayer({
