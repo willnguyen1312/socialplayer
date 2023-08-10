@@ -41,6 +41,38 @@ playbackActions.loadYoutubeUrl({ source: "youtube-video-source" })
 
 Refer to [Core API section](/api/) for more details
 
+## Example with Angular
+
+Simply importing the utilities you need from `@socialplayer/angular` and social plugin for your platform
+
+```html
+<div id="youtube-video"></div>
+```
+
+```ts
+import { AfterViewInit, Component } from "@angular/core"
+import { youtubePlugin } from "@socialplayer/youtube-plugin"
+import { SocialPlayerService } from "@socialplayer/angular"
+SocialPlayerService.use(youtubePlugin)
+
+@Component({
+  selector: "custom-component",
+  templateUrl: "./custom.component.html",
+  providers: [ZoomImageWheelService],
+})
+export class AppComponent implements AfterViewInit {
+  youtubePlaybackActions = this.socialPlayerService.createSocialPlayer({ id: "youtube" }).playbackActions
+
+  constructor(private socialPlayerService: SocialPlayerService) {}
+
+  ngAfterViewInit() {
+    this.youtubePlaybackActions.loadYoutubeUrl({ source: "youtube-video-source" })
+  }
+}
+```
+
+Refer to [Angular API section](/api/adapters/angular) for more details
+
 ## Example with React Adapter
 
 Simply importing the utilities you need from `@socialplayer/react`
@@ -184,6 +216,7 @@ Refer to [Vue Adapter section](/api/adapters/vue) for more details
 ## Demos
 
 - [Vanilla JS](/examples/vanilla)
+- [Angular](/examples/angular)
 - [Vue](/examples/vue)
 - [React](/examples/react)
 - [Preact](/examples/preact)
