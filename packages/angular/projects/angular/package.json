@@ -1,6 +1,6 @@
 {
-  "name": "@socialplayer/angular-plugin",
-  "version": "0.0.1",
+  "name": "@socialplayer/angular",
+  "version": "0.0.0",
   "peerDependencies": {
     "@angular/common": "^16.1.0",
     "@angular/core": "^16.1.0"
