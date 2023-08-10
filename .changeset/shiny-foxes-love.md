@@ -2,4 +2,4 @@
 "@socialplayer/angular": minor
 ---
 
-Release Angular adapter 💞
+Release angular adapter 💞

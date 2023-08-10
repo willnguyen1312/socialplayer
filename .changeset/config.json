@@ -13,7 +13,6 @@
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
   "ignore": [
-    "angular",
     "docs",
     "with-vanilla",
     "with-angular",
