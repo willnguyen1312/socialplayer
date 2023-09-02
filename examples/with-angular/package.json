@@ -6,13 +6,13 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^16.2.0",
-    "@angular/common": "^16.2.0",
-    "@angular/compiler": "^16.2.0",
-    "@angular/core": "^16.2.0",
-    "@angular/platform-browser": "^16.2.0",
-    "@angular/platform-browser-dynamic": "^16.2.0",
-    "@angular/router": "^16.2.0",
+    "@angular/animations": "^16.2.3",
+    "@angular/common": "^16.2.3",
+    "@angular/compiler": "^16.2.3",
+    "@angular/core": "^16.2.3",
+    "@angular/platform-browser": "^16.2.3",
+    "@angular/platform-browser-dynamic": "^16.2.3",
+    "@angular/router": "^16.2.3",
     "@socialplayer/angular": "latest",
     "@socialplayer/dailymotion-plugin": "latest",
     "@socialplayer/facebook-plugin": "latest",
@@ -25,13 +25,13 @@
     "@socialplayer/wistia-plugin": "latest",
     "@socialplayer/youtube-plugin": "latest",
     "rxjs": "~7.8.1",
-    "tslib": "^2.6.1",
+    "tslib": "^2.6.2",
     "zone.js": "~0.13.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^16.2.0",
-    "@angular/cli": "~16.2.0",
-    "@angular/compiler-cli": "^16.2.0",
-    "typescript": "~5.1.6"
+    "@angular-devkit/build-angular": "^16.2.1",
+    "@angular/cli": "~16.2.1",
+    "@angular/compiler-cli": "^16.2.3",
+    "typescript": "~5.2.2"
   }
 }

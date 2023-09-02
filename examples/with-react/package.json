@@ -21,13 +21,13 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/node": "^20.4.8",
-    "@types/react": "^18.2.19",
+    "@types/node": "^20.5.8",
+    "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
-    "@unocss/reset": "^0.54.2",
+    "@unocss/reset": "^0.55.4",
     "@vitejs/plugin-react": "^4.0.4",
-    "typescript": "^5.1.6",
-    "unocss": "^0.54.2",
+    "typescript": "^5.2.2",
+    "unocss": "^0.55.4",
     "vite": "^4.4.9"
   }
 }

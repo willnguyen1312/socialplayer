@@ -6,9 +6,9 @@
     "dev": "vite"
   },
   "devDependencies": {
-    "@unocss/reset": "^0.54.2",
-    "typescript": "^5.1.6",
-    "unocss": "^0.54.2",
+    "@unocss/reset": "^0.55.4",
+    "typescript": "^5.2.2",
+    "unocss": "^0.55.4",
     "vite": "^4.4.9"
   },
   "dependencies": {
