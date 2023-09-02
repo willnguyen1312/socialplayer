@@ -109,7 +109,7 @@ importers:
     devDependencies:
       "@angular-devkit/build-angular":
         specifier: ^16.2.1
-        version: 16.2.1(@angular/compiler-cli@16.2.3)(ng-packagr@16.2.2)(typescript@5.2.2)
+        version: 16.2.1(@angular/compiler-cli@16.2.3)(typescript@5.2.2)
       "@angular/cli":
         specifier: ~16.2.1
         version: 16.2.1
@@ -173,7 +173,7 @@ importers:
         version: 0.55.4(postcss@8.4.27)(vite@4.4.9)
       vite:
         specifier: ^4.4.9
-        version: 4.4.9
+        version: 4.4.9(@types/node@20.5.8)
 
   examples/with-qwik:
     dependencies:
@@ -356,7 +356,7 @@ importers:
         version: 0.55.4(postcss@8.4.27)(vite@4.4.9)
       vite:
         specifier: ^4.4.9
-        version: 4.4.9
+        version: 4.4.9(@types/node@20.5.8)
       vite-plugin-solid:
         specifier: ^2.7.0
         version: 2.7.0(solid-js@1.7.11)(vite@4.4.9)
@@ -423,7 +423,7 @@ importers:
         version: 0.55.4(postcss@8.4.27)(vite@4.4.9)
       vite:
         specifier: ^4.4.9
-        version: 4.4.9
+        version: 4.4.9(@types/node@20.5.8)
 
   examples/with-vanilla:
     dependencies:
@@ -472,7 +472,7 @@ importers:
         version: 0.55.4(postcss@8.4.27)(vite@4.4.9)
       vite:
         specifier: ^4.4.9
-        version: 4.4.9
+        version: 4.4.9(@types/node@20.5.8)
 
   examples/with-vue:
     dependencies:
@@ -527,7 +527,7 @@ importers:
         version: 0.55.4(postcss@8.4.27)(vite@4.4.9)
       vite:
         specifier: ^4.4.9
-        version: 4.4.9
+        version: 4.4.9(@types/node@20.5.8)
       vue-tsc:
         specifier: ^1.8.8
         version: 1.8.8(typescript@5.2.2)
@@ -543,7 +543,7 @@ importers:
     devDependencies:
       "@angular-devkit/build-angular":
         specifier: ^16.2.1
-        version: 16.2.1(@angular/compiler-cli@16.2.3)(ng-packagr@16.2.2)(typescript@5.2.2)
+        version: 16.2.1(@angular/compiler-cli@16.2.3)(ng-packagr@16.2.2)(typescript@5.1.6)
       "@angular/cli":
         specifier: ~16.2.1
         version: 16.2.1
@@ -552,16 +552,16 @@ importers:
         version: 16.2.3(@angular/core@16.2.3)
       "@angular/compiler-cli":
         specifier: ^16.2.3
-        version: 16.2.3(@angular/compiler@16.2.3)(typescript@5.2.2)
+        version: 16.2.3(@angular/compiler@16.2.3)(typescript@5.1.6)
       "@angular/core":
         specifier: ^16.2.3
         version: 16.2.3(rxjs@7.8.1)(zone.js@0.13.1)
       ng-packagr:
         specifier: ^16.2.2
-        version: 16.2.2(@angular/compiler-cli@16.2.3)(tslib@2.6.2)(typescript@5.2.2)
+        version: 16.2.2(@angular/compiler-cli@16.2.3)(tslib@2.6.2)(typescript@5.1.6)
       typescript:
-        specifier: ~5.2.2
-        version: 5.2.2
+        specifier: ~5.1.6
+        version: 5.1.6
     publishDirectory: ./dist/angular
 
   packages/core:
@@ -789,7 +789,7 @@ importers:
         version: 5.23.0
       vite:
         specifier: 4.4.9
-        version: 4.4.9
+        version: 4.4.9(@types/node@20.5.8)
 
   packages/react:
     dependencies:
@@ -1260,7 +1260,131 @@ packages:
       - chokidar
     dev: true
 
-  /@angular-devkit/build-angular@16.2.1(@angular/compiler-cli@16.2.3)(ng-packagr@16.2.2)(typescript@5.2.2):
+  /@angular-devkit/build-angular@16.2.1(@angular/compiler-cli@16.2.3)(ng-packagr@16.2.2)(typescript@5.1.6):
+    resolution:
+      { integrity: sha512-2CkBOk76O8ROys5NUcRBMLdFVPuBfr3oy9omP5nO0aQVA9mWc3TRy/MeqDbr0xcY8LyJBB4B1jEQrkjWaeSDcA== }
+    engines: { node: ^16.14.0 || >=18.10.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: ">= 1.13.0" }
+    peerDependencies:
+      "@angular/compiler-cli": ^16.0.0
+      "@angular/localize": ^16.0.0
+      "@angular/platform-server": ^16.0.0
+      "@angular/service-worker": ^16.0.0
+      jest: ^29.5.0
+      jest-environment-jsdom: ^29.5.0
+      karma: ^6.3.0
+      ng-packagr: ^16.0.0
+      protractor: ^7.0.0
+      tailwindcss: ^2.0.0 || ^3.0.0
+      typescript: ">=4.9.3 <5.2"
+    peerDependenciesMeta:
+      "@angular/localize":
+        optional: true
+      "@angular/platform-server":
+        optional: true
+      "@angular/service-worker":
+        optional: true
+      jest:
+        optional: true
+      jest-environment-jsdom:
+        optional: true
+      karma:
+        optional: true
+      ng-packagr:
+        optional: true
+      protractor:
+        optional: true
+      tailwindcss:
+        optional: true
+    dependencies:
+      "@ampproject/remapping": 2.2.1
+      "@angular-devkit/architect": 0.1602.1(chokidar@3.5.3)
+      "@angular-devkit/build-webpack": 0.1602.1(chokidar@3.5.3)(webpack-dev-server@4.15.1)(webpack@5.88.2)
+      "@angular-devkit/core": 16.2.1(chokidar@3.5.3)
+      "@angular/compiler-cli": 16.2.3(@angular/compiler@16.2.3)(typescript@5.1.6)
+      "@babel/core": 7.22.9
+      "@babel/generator": 7.22.9
+      "@babel/helper-annotate-as-pure": 7.22.5
+      "@babel/helper-split-export-declaration": 7.22.6
+      "@babel/plugin-proposal-async-generator-functions": 7.20.7(@babel/core@7.22.9)
+      "@babel/plugin-transform-async-to-generator": 7.22.5(@babel/core@7.22.9)
+      "@babel/plugin-transform-runtime": 7.22.9(@babel/core@7.22.9)
+      "@babel/preset-env": 7.22.9(@babel/core@7.22.9)
+      "@babel/runtime": 7.22.6
+      "@babel/template": 7.22.5
+      "@discoveryjs/json-ext": 0.5.7
+      "@ngtools/webpack": 16.2.1(@angular/compiler-cli@16.2.3)(typescript@5.1.6)(webpack@5.88.2)
+      "@vitejs/plugin-basic-ssl": 1.0.1(vite@4.4.7)
+      ansi-colors: 4.1.3
+      autoprefixer: 10.4.14(postcss@8.4.27)
+      babel-loader: 9.1.3(@babel/core@7.22.9)(webpack@5.88.2)
+      babel-plugin-istanbul: 6.1.1
+      browserslist: 4.21.9
+      chokidar: 3.5.3
+      copy-webpack-plugin: 11.0.0(webpack@5.88.2)
+      critters: 0.0.20
+      css-loader: 6.8.1(webpack@5.88.2)
+      esbuild-wasm: 0.18.17
+      fast-glob: 3.3.1
+      guess-parser: 0.4.22(typescript@5.1.6)
+      https-proxy-agent: 5.0.1
+      inquirer: 8.2.4
+      jsonc-parser: 3.2.0
+      karma-source-map-support: 1.4.0
+      less: 4.1.3
+      less-loader: 11.1.0(less@4.1.3)(webpack@5.88.2)
+      license-webpack-plugin: 4.0.2(webpack@5.88.2)
+      loader-utils: 3.2.1
+      magic-string: 0.30.1
+      mini-css-extract-plugin: 2.7.6(webpack@5.88.2)
+      mrmime: 1.0.1
+      ng-packagr: 16.2.2(@angular/compiler-cli@16.2.3)(tslib@2.6.2)(typescript@5.1.6)
+      open: 8.4.2
+      ora: 5.4.1
+      parse5-html-rewriting-stream: 7.0.0
+      picomatch: 2.3.1
+      piscina: 4.0.0
+      postcss: 8.4.27
+      postcss-loader: 7.3.3(postcss@8.4.27)(webpack@5.88.2)
+      resolve-url-loader: 5.0.0
+      rxjs: 7.8.1
+      sass: 1.64.1
+      sass-loader: 13.3.2(sass@1.64.1)(webpack@5.88.2)
+      semver: 7.5.4
+      source-map-loader: 4.0.1(webpack@5.88.2)
+      source-map-support: 0.5.21
+      terser: 5.19.2
+      text-table: 0.2.0
+      tree-kill: 1.2.2
+      tslib: 2.6.1
+      typescript: 5.1.6
+      vite: 4.4.7(less@4.1.3)(sass@1.64.1)(terser@5.19.2)
+      webpack: 5.88.2(esbuild@0.18.17)
+      webpack-dev-middleware: 6.1.1(webpack@5.88.2)
+      webpack-dev-server: 4.15.1(webpack@5.88.2)
+      webpack-merge: 5.9.0
+      webpack-subresource-integrity: 5.1.0(webpack@5.88.2)
+    optionalDependencies:
+      esbuild: 0.18.17
+    transitivePeerDependencies:
+      - "@swc/core"
+      - "@types/node"
+      - bufferutil
+      - canvas
+      - debug
+      - fibers
+      - html-webpack-plugin
+      - lightningcss
+      - node-sass
+      - sass-embedded
+      - stylus
+      - sugarss
+      - supports-color
+      - uglify-js
+      - utf-8-validate
+      - webpack-cli
+    dev: true
+
+  /@angular-devkit/build-angular@16.2.1(@angular/compiler-cli@16.2.3)(typescript@5.2.2):
     resolution:
       { integrity: sha512-2CkBOk76O8ROys5NUcRBMLdFVPuBfr3oy9omP5nO0aQVA9mWc3TRy/MeqDbr0xcY8LyJBB4B1jEQrkjWaeSDcA== }
     engines: { node: ^16.14.0 || >=18.10.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: ">= 1.13.0" }
@@ -1337,7 +1461,6 @@ packages:
       magic-string: 0.30.1
       mini-css-extract-plugin: 2.7.6(webpack@5.88.2)
       mrmime: 1.0.1
-      ng-packagr: 16.2.2(@angular/compiler-cli@16.2.3)(tslib@2.6.2)(typescript@5.2.2)
       open: 8.4.2
       ora: 5.4.1
       parse5-html-rewriting-stream: 7.0.0
@@ -1486,6 +1609,29 @@ packages:
       rxjs: 7.8.1
       tslib: 2.6.2
     dev: false
+
+  /@angular/compiler-cli@16.2.3(@angular/compiler@16.2.3)(typescript@5.1.6):
+    resolution:
+      { integrity: sha512-4p1tDeeONiq/zceC0T6unXDuqyWiAe7v2Ag7+ewwM9V8BF+YOEpEI/41lxzmbK2U1YUvG3jWfZyw3ertQlMp0Q== }
+    engines: { node: ^16.14.0 || >=18.10.0 }
+    hasBin: true
+    peerDependencies:
+      "@angular/compiler": 16.2.3
+      typescript: ">=4.9.3 <5.2"
+    dependencies:
+      "@angular/compiler": 16.2.3(@angular/core@16.2.3)
+      "@babel/core": 7.22.5
+      "@jridgewell/sourcemap-codec": 1.4.15
+      chokidar: 3.5.3
+      convert-source-map: 1.9.0
+      reflect-metadata: 0.1.13
+      semver: 7.5.4
+      tslib: 2.6.2
+      typescript: 5.1.6
+      yargs: 17.7.2
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
 
   /@angular/compiler-cli@16.2.3(@angular/compiler@16.2.3)(typescript@5.2.2):
     resolution:
@@ -4615,6 +4761,20 @@ packages:
       { integrity: sha512-X9wngJdR9rnffd9eO1SlUqKVOKi4oS9Wqqv37bz7MWKPi2afkUphVti32Vex4RJp1j6n+mzIRNftO1Ndrx91Lg== }
     dev: true
 
+  /@ngtools/webpack@16.2.1(@angular/compiler-cli@16.2.3)(typescript@5.1.6)(webpack@5.88.2):
+    resolution:
+      { integrity: sha512-fT7uwrw3Yfi7mqVHD+kTw0zDq6jZ1CaRp6pQ5b3n+qFL+a3c34Lr/kFVVWZNktfooxO9lYWRsJdTRtid25he9w== }
+    engines: { node: ^16.14.0 || >=18.10.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: ">= 1.13.0" }
+    peerDependencies:
+      "@angular/compiler-cli": ^16.0.0
+      typescript: ">=4.9.3 <5.2"
+      webpack: ^5.54.0
+    dependencies:
+      "@angular/compiler-cli": 16.2.3(@angular/compiler@16.2.3)(typescript@5.1.6)
+      typescript: 5.1.6
+      webpack: 5.88.2(esbuild@0.18.17)
+    dev: true
+
   /@ngtools/webpack@16.2.1(@angular/compiler-cli@16.2.3)(typescript@5.2.2)(webpack@5.88.2):
     resolution:
       { integrity: sha512-fT7uwrw3Yfi7mqVHD+kTw0zDq6jZ1CaRp6pQ5b3n+qFL+a3c34Lr/kFVVWZNktfooxO9lYWRsJdTRtid25he9w== }
@@ -4741,7 +4901,7 @@ packages:
       debug: 4.3.4
       kolorist: 1.8.0
       resolve: 1.22.2
-      vite: 4.4.9
+      vite: 4.4.9(@types/node@20.5.8)
     transitivePeerDependencies:
       - preact
       - supports-color
@@ -4779,7 +4939,7 @@ packages:
       "@prefresh/utils": 1.2.0
       "@rollup/pluginutils": 4.2.1
       preact: 10.17.1
-      vite: 4.4.9
+      vite: 4.4.9(@types/node@20.5.8)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -4939,7 +5099,7 @@ packages:
       "@sveltejs/vite-plugin-svelte": 2.4.5(svelte@4.2.0)(vite@4.4.9)
       debug: 4.3.4
       svelte: 4.2.0
-      vite: 4.4.9
+      vite: 4.4.9(@types/node@20.5.8)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -4959,7 +5119,7 @@ packages:
       magic-string: 0.30.2
       svelte: 4.2.0
       svelte-hmr: 0.15.3(svelte@4.2.0)
-      vite: 4.4.9
+      vite: 4.4.9(@types/node@20.5.8)
       vitefu: 0.2.4(vite@4.4.9)
     transitivePeerDependencies:
       - supports-color
@@ -5197,7 +5357,6 @@ packages:
   /@types/node@20.5.8:
     resolution:
       { integrity: sha512-eajsR9aeljqNhK028VG0Wuw+OaY5LLxYmxeoXynIoE6jannr9/Ucd1LL0hSSoafk5LTYG+FfqsyGt81Q6Zkybw== }
-    dev: true
 
   /@types/normalize-package-data@2.4.1:
     resolution:
@@ -5463,7 +5622,7 @@ packages:
       "@unocss/core": 0.55.4
       "@unocss/reset": 0.55.4
       "@unocss/vite": 0.55.4(vite@4.4.9)
-      vite: 4.4.9
+      vite: 4.4.9(@types/node@20.5.8)
     transitivePeerDependencies:
       - rollup
 
@@ -5641,7 +5800,7 @@ packages:
       chokidar: 3.5.3
       fast-glob: 3.3.1
       magic-string: 0.30.3
-      vite: 4.4.9
+      vite: 4.4.9(@types/node@20.5.8)
     transitivePeerDependencies:
       - rollup
 
@@ -5679,7 +5838,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.4.9
+      vite: 4.4.9(@types/node@20.5.8)
       vue: 3.3.4
 
   /@volar/language-core@1.10.0:
@@ -6019,6 +6178,26 @@ packages:
     dependencies:
       "@webassemblyjs/ast": 1.11.6
       "@xtuc/long": 4.2.2
+    dev: true
+
+  /@wessberg/ts-evaluator@0.0.27(typescript@5.1.6):
+    resolution:
+      { integrity: sha512-7gOpVm3yYojUp/Yn7F4ZybJRxyqfMNf0LXK5KJiawbPfL0XTsJV+0mgrEDjOIR6Bi0OYk2Cyg4tjFu1r8MCZaA== }
+    engines: { node: ">=10.1.0" }
+    deprecated: this package has been renamed to ts-evaluator. Please install ts-evaluator instead
+    peerDependencies:
+      typescript: ">=3.2.x || >= 4.x"
+    dependencies:
+      chalk: 4.1.2
+      jsdom: 16.7.0
+      object-path: 0.11.8
+      tslib: 2.6.2
+      typescript: 5.1.6
+    transitivePeerDependencies:
+      - bufferutil
+      - canvas
+      - supports-color
+      - utf-8-validate
     dev: true
 
   /@wessberg/ts-evaluator@0.0.27(typescript@5.2.2):
@@ -8777,6 +8956,21 @@ packages:
     resolution:
       { integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag== }
 
+  /guess-parser@0.4.22(typescript@5.1.6):
+    resolution:
+      { integrity: sha512-KcUWZ5ACGaBM69SbqwVIuWGoSAgD+9iJnchR9j/IarVI1jHVeXv+bUXBIMeqVMSKt3zrn0Dgf9UpcOEpPBLbSg== }
+    peerDependencies:
+      typescript: ">=3.7.5"
+    dependencies:
+      "@wessberg/ts-evaluator": 0.0.27(typescript@5.1.6)
+      typescript: 5.1.6
+    transitivePeerDependencies:
+      - bufferutil
+      - canvas
+      - supports-color
+      - utf-8-validate
+    dev: true
+
   /guess-parser@0.4.22(typescript@5.2.2):
     resolution:
       { integrity: sha512-KcUWZ5ACGaBM69SbqwVIuWGoSAgD+9iJnchR9j/IarVI1jHVeXv+bUXBIMeqVMSKt3zrn0Dgf9UpcOEpPBLbSg== }
@@ -10927,7 +11121,7 @@ packages:
       { integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw== }
     dev: true
 
-  /ng-packagr@16.2.2(@angular/compiler-cli@16.2.3)(tslib@2.6.2)(typescript@5.2.2):
+  /ng-packagr@16.2.2(@angular/compiler-cli@16.2.3)(tslib@2.6.2)(typescript@5.1.6):
     resolution:
       { integrity: sha512-ZO+FxFXFYvdunlIdz/Jkyr2Q8h/U6FeuCHLwC6Tsi52NIjOVqFqJUZxpqotQCh8FYoaO8F6mOhhcP6YH1uhArA== }
     engines: { node: ^16.14.0 || >=18.10.0 }
@@ -10941,7 +11135,7 @@ packages:
       tailwindcss:
         optional: true
     dependencies:
-      "@angular/compiler-cli": 16.2.3(@angular/compiler@16.2.3)(typescript@5.2.2)
+      "@angular/compiler-cli": 16.2.3(@angular/compiler@16.2.3)(typescript@5.1.6)
       "@rollup/plugin-json": 6.0.0(rollup@3.27.2)
       "@rollup/plugin-node-resolve": 15.1.0(rollup@3.27.2)
       ajv: 8.12.0
@@ -10967,7 +11161,7 @@ packages:
       rxjs: 7.8.1
       sass: 1.65.1
       tslib: 2.6.2
-      typescript: 5.2.2
+      typescript: 5.1.6
     optionalDependencies:
       esbuild: 0.19.2
     transitivePeerDependencies:
@@ -13847,6 +14041,13 @@ packages:
       { integrity: sha512-KNNZtayBCtmnNmbo5mG47p1XsCyrx6iVqomjcZnec/1Y5GGARaxPs6r49RnSPeUP3YjNYiU9sQHAtY4BBvnZwg== }
     dev: true
 
+  /typescript@5.1.6:
+    resolution:
+      { integrity: sha512-zaWCozRZ6DLEWAWFrVDz1H6FVXzUSfTy5FUMWsQlU8Ym5JP9eO4xkTIROFCQvhQf61z6O/G6ugw3SgAnvvm+HA== }
+    engines: { node: ">=14.17" }
+    hasBin: true
+    dev: true
+
   /typescript@5.2.2:
     resolution:
       { integrity: sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w== }
@@ -14059,7 +14260,7 @@ packages:
       "@unocss/transformer-directives": 0.55.4
       "@unocss/transformer-variant-group": 0.55.4
       "@unocss/vite": 0.55.4(vite@4.4.9)
-      vite: 4.4.9
+      vite: 4.4.9(@types/node@20.5.8)
     transitivePeerDependencies:
       - postcss
       - rollup
@@ -14239,7 +14440,7 @@ packages:
       merge-anything: 5.1.7
       solid-js: 1.7.11
       solid-refresh: 0.5.3(solid-js@1.7.11)
-      vite: 4.4.9
+      vite: 4.4.9(@types/node@20.5.8)
       vitefu: 0.2.4(vite@4.4.9)
     transitivePeerDependencies:
       - supports-color
@@ -14302,41 +14503,6 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vite@4.4.9:
-    resolution:
-      { integrity: sha512-2mbUn2LlUmNASWwSCNSJ/EG2HuSRTnVNaydp6vMCm5VIqJsjMfbIWtbH2kDuwUVW5mMUKKZvGPX/rqeqVvv1XA== }
-    engines: { node: ^14.18.0 || >=16.0.0 }
-    hasBin: true
-    peerDependencies:
-      "@types/node": ">= 14"
-      less: "*"
-      lightningcss: ^1.21.0
-      sass: "*"
-      stylus: "*"
-      sugarss: "*"
-      terser: ^5.4.0
-    peerDependenciesMeta:
-      "@types/node":
-        optional: true
-      less:
-        optional: true
-      lightningcss:
-        optional: true
-      sass:
-        optional: true
-      stylus:
-        optional: true
-      sugarss:
-        optional: true
-      terser:
-        optional: true
-    dependencies:
-      esbuild: 0.18.17
-      postcss: 8.4.27
-      rollup: 3.27.2
-    optionalDependencies:
-      fsevents: 2.3.2
-
   /vite@4.4.9(@types/node@20.5.8):
     resolution:
       { integrity: sha512-2mbUn2LlUmNASWwSCNSJ/EG2HuSRTnVNaydp6vMCm5VIqJsjMfbIWtbH2kDuwUVW5mMUKKZvGPX/rqeqVvv1XA== }
@@ -14369,10 +14535,9 @@ packages:
       "@types/node": 20.5.8
       esbuild: 0.18.17
       postcss: 8.4.27
-      rollup: 3.28.1
+      rollup: 3.27.2
     optionalDependencies:
       fsevents: 2.3.2
-    dev: true
 
   /vitefu@0.2.4(vite@4.4.9):
     resolution:
@@ -14383,7 +14548,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.4.9
+      vite: 4.4.9(@types/node@20.5.8)
     dev: true
 
   /vitepress@1.0.0-beta.7(@algolia/client-search@4.19.1)(search-insights@2.6.0):
@@ -14402,7 +14567,7 @@ packages:
       mark.js: 8.11.1
       minisearch: 6.1.0
       shiki: 0.14.3
-      vite: 4.4.9
+      vite: 4.4.9(@types/node@20.5.8)
       vue: 3.3.4
     transitivePeerDependencies:
       - "@algolia/client-search"
