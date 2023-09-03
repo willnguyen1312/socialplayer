@@ -1,6 +1,6 @@
 {
   "name": "@socialplayer/twitch-plugin",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A Twitch implementation of socialplayer",
   "author": "Nam Nguyen <nam.nguyen.node@gmail.com>",
   "repository": "willnguyen1312/socialplayer",
