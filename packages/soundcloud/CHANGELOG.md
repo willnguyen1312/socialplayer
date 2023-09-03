@@ -1,5 +1,13 @@
 # @socialplayer/soundcloud-plugin
 
+## 0.2.4
+
+### Patch Changes
+
+- Updated dependencies
+  [[`7df44af`](https://github.com/willnguyen1312/socialplayer/commit/7df44af677bc8f9c871bbdbaa0a285dd23628b37)]:
+  - @socialplayer/core@0.4.0
+
 ## 0.2.3
 
 ### Patch Changes
