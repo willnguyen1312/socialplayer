@@ -1,6 +1,8 @@
-import pkg from "@socialplayer/core/package.json"
+import { createRequire } from "node:module"
 import Unocss from "unocss/vite"
 import { defineConfig } from "vitepress"
+const require = createRequire(import.meta.url)
+const pkg = require("@socialplayer/core/package.json")
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
