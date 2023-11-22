@@ -34,6 +34,7 @@
     "format:fix": "prettier --cache --write --ignore-path .gitignore .",
     "lint": "turbo lint --concurrency 20",
     "postbuild": "pnpm run size --concurrency 20",
+    "preview:docs": "pnpm --filter=docs preview",
     "react": "pnpm --filter=@socialplayer/react --concurrency 20",
     "release": "pnpm check && changeset version && changeset publish",
     "size": "esno scripts/size.ts",
