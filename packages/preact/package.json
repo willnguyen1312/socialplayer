@@ -40,16 +40,16 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
   },
   "devDependencies": {
-    "@types/node": "^20.5.8",
-    "eslint": "^8.48.0",
+    "@types/node": "^20.9.4",
+    "eslint": "^8.54.0",
     "eslint-config-custom": "workspace:*",
     "tsconfig": "workspace:*",
-    "tsup": "^7.2.0",
-    "typescript": "^5.2.2"
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.2"
   },
   "dependencies": {
     "@socialplayer/core": "workspace:*",
-    "valtio": "^1.11.2"
+    "valtio": "^1.12.0"
   },
   "peerDependencies": {
     "preact": "^10.0.0"
