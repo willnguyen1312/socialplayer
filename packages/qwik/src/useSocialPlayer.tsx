@@ -13,6 +13,8 @@ type useSocialPlayerFunc = {
 export const useSocialPlayer: useSocialPlayerFunc = (arg) => {
   const playbackActionsRef: { value: SocialPlayerActions } = { value: {} as SocialPlayerActions }
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
   const use: PluginFunc = $((plugin: Plugin, options = {}) => {
     const { use } = createSocialPlayer(arg)
     const result = use(plugin, options)
